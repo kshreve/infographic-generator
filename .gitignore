@@ -1,4 +1,3 @@
-
 /webapp/Test.csproj
 /webapp/Test.csproj.user
 /webapp/Test.sln
@@ -13,6 +12,9 @@
 /webapp/App_Data
 /webapp/bin
 /webapp/KevinTest.html
+/webapp/.cache
+/webapp/dist
+/webapp/node_modules
 /documents/presentations/beta-presentation/Index Landscape.png
 /documents/presentations/beta-presentation/Index Portrait.png
 /documents/presentations/beta-presentation/Lead1.png

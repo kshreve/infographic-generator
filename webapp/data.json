@@ -1,0 +1,443 @@
+[
+  {
+    "KPI Name": "Retail Sales",
+    "Description": "The term Retail Sales refers to new vehicles that are registered to individuals or companies that register a small number of vehicles annually.",
+    "Jan-12": 153,
+    "Feb-12": 164,
+    "Mar-12": 162,
+    "Apr-12": 166,
+    "May-12": 171
+  },
+  {
+    "KPI Name": "Used Vehicle Sales",
+    "Description": "Used vehicle sales refer to the used vehicles that are sold to individuals",
+    "Jan-12": 64,
+    "Feb-12": 51,
+    "Mar-12": 48,
+    "Apr-12": 55,
+    "May-12": 57
+  },
+  {
+    "KPI Name": "Dealer Retention",
+    "Description": "Retention refers to the percentage of vehicles registered in your primary market area (PMA) who have visited your dealership for Customer Pay (CP) vehicle service in the last 12 months.",
+    "Jan-12": "29.9%",
+    "Feb-12": "26.2%",
+    "Mar-12": "28.4%",
+    "Apr-12": "30.1%",
+    "May-12": "32.4%"
+  },
+  {
+    "KPI Name": "Visits per Customer",
+    "Description": "Visits per Customer shows the percentage of your customers who returned for CP vehicle service at least two or more times in the last 12 months, ending on the current month.",
+    "Jan-12": "52.1%",
+    "Feb-12": "53.4%",
+    "Mar-12": "53.0%",
+    "Apr-12": "56.9%",
+    "May-12": "58.7%"
+  },
+  {
+    "KPI Name": "Lapor Ops per RO",
+    "Description": "The average number of Labor Operations peformed within each RO",
+    "Jan-12": 3.4,
+    "Feb-12": 2.1,
+    "Mar-12": 4.5,
+    "Apr-12": 2.9,
+    "May-12": 3.3
+  },
+  {
+    "KPI Name": "Active Customers",
+    "Description": "An Active Customer is one who returned to your dealership for CP vehicle service at least once in the past 12 months.",
+    "Jan-12": 1418,
+    "Feb-12": 1423,
+    "Mar-12": 1448,
+    "Apr-12": 1451,
+    "May-12": 1467
+  },
+  {
+    "KPI Name": "Inactive Customers",
+    "Description": "An Inactive Customer is a person who resides in your PMA that owns a vehicle sold either by your dealership or another non-PMA (Your Brand) dealer but DID NOT return for CP vehicle service in the past 12 months.",
+    "Jan-12": 1976,
+    "Feb-12": 1962,
+    "Mar-12": 1960,
+    "Apr-12": 1954,
+    "May-12": 1944
+  },
+  {
+    "KPI Name": "Single Visit Customers",
+    "Description": "A Single Visit Customer is an Active Customer who has only returned for CP vehicle service one time in the past 12 months.",
+    "Jan-12": 567,
+    "Feb-12": 564,
+    "Mar-12": 569,
+    "Apr-12": 561,
+    "May-12": 554
+  },
+  {
+    "KPI Name": "Recent Sales Customers",
+    "Description": "A Recent Customer is one who purchased a vehicle from your dealership and DID NOT return for CP vehicle service in the past 12 months.",
+    "Jan-12": 184,
+    "Feb-12": 189,
+    "Mar-12": 187,
+    "Apr-12": 191,
+    "May-12": 196
+  },
+  {
+    "KPI Name": "Service Labor Opportunity",
+    "Description": "Labor Opportunity is the potential revenue that your dealership may possibly generate from the cost of labor by getting your Inactive Customers to come in at least one time for CP vehicle service",
+    "Jan-12": "$ 262,000",
+    "Feb-12": "$ 251,028",
+    "Mar-12": "$ 240,794",
+    "Apr-12": "$ 238,120",
+    "May-12": "$ 237,341"
+  },
+  {
+    "KPI Name": "Service Parts Opportunity",
+    "Description": "Parts Opportunity is the potential revenue that your dealership may possibly generate from the cost of parts by getting your Inactive Customers to come in at least one time for CP vehicle service",
+    "Jan-12": "$ 193,880",
+    "Feb-12": "$ 185,761",
+    "Mar-12": "$ 178,188",
+    "Apr-12": "$ 176,209",
+    "May-12": "$ 175,632"
+  },
+  {
+    "KPI Name": "RO Count",
+    "Description": "RO Count shows the number of Repair Orders (RO) your dealership has accumulated in the last 12 months, ending on the current month.",
+    "Jan-12": 1798,
+    "Feb-12": 1804,
+    "Mar-12": 1795,
+    "Apr-12": 1815,
+    "May-12": 1841
+  },
+  {
+    "KPI Name": "Average $ per RO",
+    "Description": "Average $ per RO shows your Average CP dollar value spent on each of your ROs for a rolling 12 months, ending on the current month",
+    "Jan-12": "$ 141.38",
+    "Feb-12": "$ 139.72",
+    "Mar-12": "$ 108.01",
+    "Apr-12": "$ 134.84",
+    "May-12": "$ 151.89"
+  },
+  {
+    "KPI Name": "Prospect Count",
+    "Description": "Prospects are potential sales customers provided by your manufacturer and Urban Science",
+    "Jan-12": 1414,
+    "Feb-12": 1318,
+    "Mar-12": 1304,
+    "Apr-12": 1294,
+    "May-12": 1287
+  },
+  {
+    "KPI Name": "Dealer Effectiveness",
+    "Description": "Dealer Effectiveness is defined as a dealer's nationwide sales compared to the Expected at the Benchmark in that dealer's PMA. The formula: Dealer Effectiveness = ((Dealer National Sales) / (Expected @ Benchmark in the PMA)) X 100.",
+    "Jan-12": "84.2%",
+    "Feb-12": "84.5%",
+    "Mar-12": "83.4%",
+    "Apr-12": "81.9%",
+    "May-12": "81.8%"
+  },
+  {
+    "KPI Name": "Brand Effectiveness",
+    "Description": "Brand Effectiveness is defined as brand sales made by any dealer in the PMA compared to the Expected at the Benchmark. The formula: Brand Effectiveness = ((Brand Sales in the PMA) / (Expected @ Benchmark in the PMA)) X 100.",
+    "Jan-12": "115.6%",
+    "Feb-12": "117.2%",
+    "Mar-12": "116.4%",
+    "Apr-12": "115.6%",
+    "May-12": "114.1%"
+  },
+  {
+    "KPI Name": "Lost Profit",
+    "Description": "Lost Profit = the Lost Sales in the MyPMA times the national average Gross Profit per Vehicle plus the Lost Sales times the Lifetime Service Value.",
+    "Jan-12": "$ 886,388",
+    "Feb-12": "$ 848,879",
+    "Mar-12": "$ 839,009",
+    "Apr-12": "$ 823,216",
+    "May-12": "$ 815,319"
+  },
+  {
+    "KPI Name": "Lost Sales",
+    "Description": "Within a Census Tract, the Lost Sales = Sales Below Expected at the Benchmark + Insell. At the MyPMA level: Lost Sales = Gross Lost Sales + Insell.",
+    "Jan-12": 449,
+    "Feb-12": 430,
+    "Mar-12": 425,
+    "Apr-12": 417,
+    "May-12": 413
+  },
+  {
+    "KPI Name": "Pump-In Sales",
+    "Description": "Pump-In is the distribution of sales into the PMA by any brand dealer.",
+    "Jan-12": "",
+    "Feb-12": "",
+    "Mar-12": "",
+    "Apr-12": "",
+    "May-12": ""
+  },
+  {
+    "KPI Name": "Pump-In Sales",
+    "Description": "Anytown Automotive",
+    "Jan-12": 632,
+    "Feb-12": 641,
+    "Mar-12": 649,
+    "Apr-12": 653,
+    "May-12": 656
+  },
+  {
+    "KPI Name": "Pump-In Sales",
+    "Description": "Allan Automart",
+    "Jan-12": 398,
+    "Feb-12": 371,
+    "Mar-12": 367,
+    "Apr-12": 365,
+    "May-12": 365
+  },
+  {
+    "KPI Name": "Pump-In Sales",
+    "Description": "Jefferson Automotive",
+    "Jan-12": 334,
+    "Feb-12": 327,
+    "Mar-12": 329,
+    "Apr-12": 324,
+    "May-12": 319
+  },
+  {
+    "KPI Name": "Pump-In Sales",
+    "Description": "Nestor Auto Center",
+    "Jan-12": 38,
+    "Feb-12": 32,
+    "Mar-12": 33,
+    "Apr-12": 30,
+    "May-12": 27
+  },
+  {
+    "KPI Name": "Pump-In Sales",
+    "Description": "Diamond Automotive",
+    "Jan-12": 30,
+    "Feb-12": 31,
+    "Mar-12": 27,
+    "Apr-12": 28,
+    "May-12": 25
+  },
+  {
+    "KPI Name": "Pump-In Sales",
+    "Description": "Anthony Motors",
+    "Jan-12": 23,
+    "Feb-12": 20,
+    "Mar-12": 19,
+    "Apr-12": 21,
+    "May-12": 18
+  },
+  {
+    "KPI Name": "Competitive Segment Sales",
+    "Description": "The number of retail sales for each competitive make by vehicle segment (e.g. - Small Car, Car, Truck, etc.)",
+    "Jan-12": "",
+    "Feb-12": "",
+    "Mar-12": "",
+    "Apr-12": "",
+    "May-12": ""
+  },
+  {
+    "KPI Name": "Competitive Segment Sales",
+    "Description": "Anytown Automotive",
+    "Jan-12": 98,
+    "Feb-12": 52,
+    "Mar-12": 74,
+    "Apr-12": 81,
+    "May-12": 105
+  },
+  {
+    "KPI Name": "Competitive Segment Sales",
+    "Description": "Jeff Williams Toyota",
+    "Jan-12": 167,
+    "Feb-12": 51,
+    "Mar-12": 78,
+    "Apr-12": 152,
+    "May-12": 126
+  },
+  {
+    "KPI Name": "Competitive Segment Sales",
+    "Description": "Uptown Honda",
+    "Jan-12": 105,
+    "Feb-12": 74,
+    "Mar-12": 89,
+    "Apr-12": 131,
+    "May-12": 72
+  },
+  {
+    "KPI Name": "Competitive Segment Sales",
+    "Description": "Fred Rodgers Mazda",
+    "Jan-12": 103,
+    "Feb-12": 173,
+    "Mar-12": 72,
+    "Apr-12": 142,
+    "May-12": 81
+  },
+  {
+    "KPI Name": "Competitive Segment Sales",
+    "Description": "Garrett Ford",
+    "Jan-12": 68,
+    "Feb-12": 40,
+    "Mar-12": 43,
+    "Apr-12": 57,
+    "May-12": 38
+  },
+  {
+    "KPI Name": "Competitive Segment Sales",
+    "Description": "Peter Lake Ford",
+    "Jan-12": 50,
+    "Feb-12": 24,
+    "Mar-12": 53,
+    "Apr-12": 40,
+    "May-12": 42
+  },
+  {
+    "KPI Name": "New Brand Leads",
+    "Description": "The number of new leads received from a brand-owned internet site (e.g. - VW.com)",
+    "Jan-12": 1423,
+    "Feb-12": 1384,
+    "Mar-12": 1456,
+    "Apr-12": 1501,
+    "May-12": 1526
+  },
+  {
+    "KPI Name": "New 3PL Leads",
+    "Description": "The number of new leads received from a 3rd party internet site (e.g. - kbb.com)",
+    "Jan-12": 716,
+    "Feb-12": 718,
+    "Mar-12": 729,
+    "Apr-12": 755,
+    "May-12": 763
+  },
+  {
+    "KPI Name": "New 3PL Leads",
+    "Description": "Kelly Blue Book",
+    "Jan-12": 302,
+    "Feb-12": 314,
+    "Mar-12": 324,
+    "Apr-12": 331,
+    "May-12": 319
+  },
+  {
+    "KPI Name": "New 3PL Leads",
+    "Description": "Edmunds",
+    "Jan-12": 257,
+    "Feb-12": 264,
+    "Mar-12": 254,
+    "Apr-12": 269,
+    "May-12": 274
+  },
+  {
+    "KPI Name": "New 3PL Leads",
+    "Description": "Dealix",
+    "Jan-12": 103,
+    "Feb-12": 94,
+    "Mar-12": 105,
+    "Apr-12": 108,
+    "May-12": 114
+  },
+  {
+    "KPI Name": "New 3PL Leads",
+    "Description": "Automotive.com",
+    "Jan-12": 33,
+    "Feb-12": 27,
+    "Mar-12": 31,
+    "Apr-12": 36,
+    "May-12": 42
+  },
+  {
+    "KPI Name": "New 3PL Leads",
+    "Description": "Jumpstart",
+    "Jan-12": 21,
+    "Feb-12": 19,
+    "Mar-12": 15,
+    "Apr-12": 11,
+    "May-12": 14
+  },
+  {
+    "KPI Name": "Unique Customers",
+    "Description": "The number of unique customers who have submitted leads",
+    "Jan-12": 1711,
+    "Feb-12": 1682,
+    "Mar-12": 1748,
+    "Apr-12": 1805,
+    "May-12": 1831
+  },
+  {
+    "KPI Name": "Average Response Time",
+    "Description": "The average number of minutes from the time a dealership receives a lead to the time the customer is contacted",
+    "Jan-12": 74.2,
+    "Feb-12": 65.1,
+    "Mar-12": 59.7,
+    "Apr-12": 50.2,
+    "May-12": 41.2
+  },
+  {
+    "KPI Name": "Close Rate",
+    "Description": "The percentage of customers who have bought a vehicle from online leads",
+    "Jan-12": "2.7%",
+    "Feb-12": "2.7%",
+    "Mar-12": "2.5%",
+    "Apr-12": "2.6%",
+    "May-12": "2.6%"
+  },
+  {
+    "KPI Name": "Lost Sales from Leads",
+    "Description": "The number of customer who submitted a lead to your dealership but purchased from another same brand dealership",
+    "Jan-12": 7,
+    "Feb-12": 10,
+    "Mar-12": 8,
+    "Apr-12": 9,
+    "May-12": 12
+  },
+  {
+    "KPI Name": "New Sales from Leads",
+    "Description": "The number of new vehicles puchased that can be linked to an online lead",
+    "Jan-12": 32,
+    "Feb-12": 34,
+    "Mar-12": 34,
+    "Apr-12": 35,
+    "May-12": 36
+  },
+  {
+    "KPI Name": "Used Sales from Leads",
+    "Description": "The number of used vehicles purchased that can be linked to an online lead",
+    "Jan-12": 13,
+    "Feb-12": 11,
+    "Mar-12": 10,
+    "Apr-12": 12,
+    "May-12": 12
+  },
+  {
+    "KPI Name": "Cost per Sale",
+    "Description": "The amount of money spent by purchasing leads for each vehicle sold",
+    "Jan-12": "$ 189",
+    "Feb-12": "$ 191",
+    "Mar-12": "$ 198",
+    "Apr-12": "$ 195",
+    "May-12": "$ 191"
+  },
+  {
+    "KPI Name": "Unopened Leads",
+    "Description": "The number of leads that have not been contacted by a dealership",
+    "Jan-12": 193,
+    "Feb-12": 189,
+    "Mar-12": 197,
+    "Apr-12": 203,
+    "May-12": 206
+  },
+  {
+    "KPI Name": "Response Method Phone",
+    "Description": "The number of times a dealership has contacted new leads via a phone call",
+    "Jan-12": 642,
+    "Feb-12": 631,
+    "Mar-12": 656,
+    "Apr-12": 677,
+    "May-12": 687
+  },
+  {
+    "KPI Name": "Response Method Email",
+    "Description": "The number of times a dealership has contacted new leads via an email message",
+    "Jan-12": 1497,
+    "Feb-12": 1471,
+    "Mar-12": 1530,
+    "Apr-12": 1579,
+    "May-12": 1602
+  }
+]
