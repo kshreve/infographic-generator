@@ -58,9 +58,10 @@ window.KPILocalStorage = function KPILocalStorage() {
   };
 }
 
-//Creates a properly formatted date out of the default ASP.NET date which looks like /DATE(0000000)/ and turns into Jan. 01, 2012 looking date
+//Use To - Creates a properly formatted date out of the default ASP.NET date which looks like
+// /DATE(0000000)/ and turns into Jan. 01, 2012 looking date
 window.FormatDate = function FormatDate(date) {
-  return new Date(parseInt(date.substr(6)));
+  return new Date(date);
 }
 
 //Send in a date from the sql database so that we can do the comparison to see if any KPI's date matches your search.
