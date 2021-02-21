@@ -6,14 +6,39 @@
 window.LoadJSON = function LoadJSON() {
   var store = new KPILocalStorage();
 
-  $.each(data, function(i, kpi) {
-    store.set(i, kpi);
+  const mappedData = data.map((point) => {
+    const [[_, KPI_Name], [__,___], [_a, janValue], [_b,febValue], [_c, marchValue], [_d,aprilValue], [_e,mayValue]] =Object.entries(point);
+    return [
+      {
+        KPI_Name: KPI_Name,
+        KPI_Date: new Date(2012,0,1),
+        KPI_Value: janValue,
+      },
+      {
+        KPI_Name: KPI_Name,
+        KPI_Date: new Date(2012,1,1),
+        KPI_Value: febValue,
+      },
+      {
+        KPI_Name: KPI_Name,
+        KPI_Date: new Date(2012,2,1),
+        KPI_Value: marchValue,
+      },
+      {
+        KPI_Name: KPI_Name,
+        KPI_Date: new Date(2012,3,1),
+        KPI_Value: aprilValue,
+      },
+      {
+        KPI_Name: KPI_Name,
+        KPI_Date: new Date(2012,4,1),
+        KPI_Value: mayValue,
+      },
+    ]
   });
-  /*$.getJSON("KPI_Handler.ashx", function(item) {
-    $.each(item, function(i, kpi) {
-      store.set(kpi.record_number, kpi);
-    });
-  });*/
+  $.each(mappedData.flat(), function(i, kpi) {
+      store.set(i, kpi);
+  });
 }
 
 //Helper function so that we can get/set easily on the local storage
@@ -43,11 +68,10 @@ window.SearchKPIByDate = function SearchKPIByDate(date) {
   var returnArr = new Array();
   var locStorage = new KPILocalStorage();
 
-  var counter = 0;
   for(var i = 0, l = locStorage.size(); i < l; i++) {
     var value = locStorage.get(i);
-    if (FormatDate(value.KPI_Date).getMonth() == date.getMonth()) {
-      if (FormatDate(value.KPI_Date).getFullYear() == date.getFullYear()) {
+    if (FormatDate(value.KPI_Date).getMonth() === date.getMonth()) {
+      if (FormatDate(value.KPI_Date).getFullYear() === date.getFullYear()) {
         var dataPoint = new Array(2);
         dataPoint[0] = value.KPI_Name;
         dataPoint[1] = value.KPI_Value;
@@ -77,7 +101,7 @@ window.GetKPI = function GetKPI(date, kpiName) {
 // Author: Kevin Shreve, Lok Cheung
 // Description: Get data of a KPI over months
 // Remarks: this function does not deal with data for over a year
-window.GetTrendKPI = function GetTrendKPI(date, kpiName) {
+window.GetTrendKPI = function F(date, kpiName) {
   var kpiArray = new Array();
   var kpi;
   var month;
