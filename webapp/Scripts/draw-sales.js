@@ -4,7 +4,7 @@
 //format: trendArray.push(['name-of-element', x, y, width, height,[JanData, FebData,...]]);
 //if there is a radius with no width and height, just pass the radius twice
 var trendArray=new Array();
-function DrawSalesInfographic (c,date)
+window.DrawSalesInfographic = function DrawSalesInfographic (c,date)
 {
 	var canvas = document.getElementById(c);
 	var context = canvas.getContext("2d");
@@ -13,7 +13,7 @@ function DrawSalesInfographic (c,date)
 	//    | |  | /  /  \  | | |
 	//    | |  |<   |--|  | | |
 	//    |/   | \  |  |   v v    some stuff
-    
+
     context.fillStyle = "#ffffff";
     context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -83,7 +83,7 @@ function DrawCanvasPart2 (c,date)
 	Retail_Sale(c, canvas.width/4-75, 415, 77, 76, [date, GetKPI(date, "Retail_Sales")]);
 	Cost_Per_Sale(c, canvas.width/2 + 290 - 88, 130, 122, 80, [date, GetKPI(date, "Cost_Per_Sale")]);
 	Pump_In_Sale(c, canvas.width/4+212, 330, canvas.width - (canvas.width/4+212), 370, [[GetKPI(date, "Pump_In_Sales_Anytown_Automotive"), "Anytown Automotive", "#ff9b00"], [GetKPI(date, "Pump_In_Sale_Allan_Automart"), "Allan Automart", "#f54c08"], [GetKPI(date, "Pump_In_Sale_Jefferson_Automotive"), "Jefferson Automotive", "#b4213f"], [GetKPI(date, "Pump_In_Sale_Nestor_Auto_Center"), "Nestor Auto Center", "#69039d"], [GetKPI(date, "Pump_In_Sale_Diamond_Automotive"), "Diamond Automotive", "#283577"], [GetKPI(date, "Pump_In_Sale_Anthony_Motors"), "Anthony Motors", "#66a5c7"]]);
-	
+
 	//Array of elements infomation
 	/*!!! you have to add 207px(height of header picture) to y !!!*/
 	//var dataArray = GetTrendKPI(date, 'Retail_Sales');
@@ -91,7 +91,7 @@ function DrawCanvasPart2 (c,date)
 	//alert(GetTrendKPI(date, 'Retail_Sales')[0][1]);
 	trendArray.push(['Retail Sale', canvas.width/4-71, 415+offset, 152, 152,GetTrendKPI(date, 'Retail_Sales'),'<p>The term Retail Sales refers to new vehicles that are registered to individuals or companies that register a small number of vehicles annually.</p>']);
 	/////trendArray.push(['Retail Sale', canvas.width/4-71, 123+offset, 152, 152,dataArray,'Description']);
-	
+
 	trendArray.push(['Used Vehicle Sale', canvas.width/4-75, 135+offset, 150, 130,GetTrendKPI(date, 'Used_Vehicle_Sales'),'<p>Used vehicle sales refer to the used vehicles that are sold to individuals</p>']);
 	trendArray.push(['Cost Per Sale', canvas.width/2 + 202, 130+offset, 240, 192,GetTrendKPI(date, 'Cost_Per_Sale'),'<p>The amount of money spent by purchasing leads for each vehicle sold</p>']);
 	trendArray.push(['Pump In Sale', canvas.width/4+212, 330+offset, canvas.width - (canvas.width/4+212), 370,[[GetTrendKPI(date, 'Pump_In_Sales_Anytown_Automotive'),"#ff9b00","Anytown Automotive"],[GetTrendKPI(date, 'Pump_In_Sale_Allan_Automart'),"#f54c08","Allan Automart"],[GetTrendKPI(date, 'Pump_In_Sale_Jefferson_Automotive'),"#b4213f","Jefferson Automotive"],[GetTrendKPI(date, 'Pump_In_Sale_Nestor_Auto_Center'),"#69039d","Nestor Auto Center"],[GetTrendKPI(date, 'Pump_In_Sale_Diamond_Automotive'),"#283577","Diamond Automotive"],[GetTrendKPI(date, 'Pump_In_Sale_Anthony_Motors'),"#66a5c7","Anthony Motors"]],'<p>Pump-In is the distribution of sales into the PMA by any brand dealer.</p>']);
@@ -110,7 +110,7 @@ function DrawCanvasPart2 (c,date)
     context.restore();
 	// draw the pointing dude
 	var imageObj = new Image();
- 
+
 	imageObj.onload = function(){
 		context.drawImage(imageObj, canvas.width/4-111, 648);
 		DrawCanvasPart3(c,date);
@@ -123,7 +123,7 @@ function DrawCanvasPart3(c,date)
 {
 	var canvas = document.getElementById(c);
 	var context = canvas.getContext("2d");
-	
+
 	// draw grey background below splitter image
 	//context.fillStyle = "#333333";
 	//context.rect(0,947, canvas.width, 300);
@@ -259,16 +259,16 @@ function DrawCanvasPart3(c,date)
 
     DrawLostProfit(c, 100, 1850, 200, 200, GetKPI(date, "Lost_Profit"));
     DrawLostSale(c, 600, 1850, 200, 200, GetKPI(date, "Lost_Sales"));
-	
+
 	var offset=100;
-	
+
 	trendArray.push(['Dealer Retention', 150, 1050+offset, 100, 100,GetTrendKPI(date, 'Dealer_Retention'),'<p>Retention refers to the percentage of vehicles registered in your primary market area (PMA) who have visited your dealership for Customer Pay (CP) vehicle service in the last 12 months.</p>']);
 	trendArray.push(['Visits Per Customer', 750, 1050+offset, 100, 100,GetTrendKPI(date, 'Visits_Per_Customer'),'<p>Visits per Customer shows the percentage of your customers who returned for CP vehicle service at least two or more times in the last 12 months, ending on the current month.</p>']);
 	trendArray.push(['Lost Profit', 100, 1850+offset, 200, 200,GetTrendKPI(date, 'Lost_Profit'),'<p>Lost Profit = the Lost Sales in the MyPMA times the national average Gross Profit per Vehicle plus the Lost Sales times the Lifetime Service Value. </p>']);
 	trendArray.push(['Lost Sales', 600, 1850+offset, 200, 200,GetTrendKPI(date, 'Lost_Sales'),'<p>Within a Census Tract, the Lost Sales = Sales Below Expected at the Benchmark + Insell. At the MyPMA level: Lost Sales = Gross Lost Sales + Insell. </p>']);
 	trendArray.push(['Competitive Segment Sale', 100, 1300+offset, 800, 200,[[GetTrendKPI(date, 'Competitive_Segment_Sale_Anytown_Automotive'),"#ff9b00", "Anytown Automotive"],[GetTrendKPI(date, 'Competitive_Segment_Sale_Jeff_Williams_Toyotas'),"#f54c08","Jeff Williams Toyotas"],[GetTrendKPI(date, 'Competitive_Segment_Sale_Uptown_Honda'),"#b4213f","Uptown Honda"],[GetTrendKPI(date, 'Competitive_Segment_Sale_Fred_Rodgers_Mazda'),"#69039d","Fred Rodgers Mazda"],[GetTrendKPI(date, 'Competitive_Segment_Sale_Garrett_Ford'),"#283577","Garrett Ford"],[GetTrendKPI(date, 'Competitive_Segment_Sale_Peter_Lake_Ford'),"#66a5c7","Peter Lake Ford"]],'<p>The amount of money spent by purchasing leads for each vehicle sold</p>']);
 
-    
+
 
 }
 
@@ -276,26 +276,26 @@ function DrawCanvasPart3(c,date)
 
 
 $(document).ready(function () {
-	// if user clicked on button, the overlay layer or the dialogbox, close the dialog	
-	$('#dialog-overlay, #dialog-box').bind("touchstart click", function () {		
-		$('#dialog-overlay, #dialog-box').hide();		
+	// if user clicked on button, the overlay layer or the dialogbox, close the dialog
+	$('#dialog-overlay, #dialog-box').bind("touchstart click", function () {
+		$('#dialog-overlay, #dialog-box').hide();
 		return false;
 	});
-	
+
 	// if user resize the window, call the same function again
-	// to make sure the overlay fills the screen and dialogbox aligned to center	
+	// to make sure the overlay fills the screen and dialogbox aligned to center
 	$(window).resize(function () {
-		
+
 		//only do it if the dialog box is not hidden
-		if (!$('#dialog-box').is(':hidden')) popup();		
-	});		
+		if (!$('#dialog-box').is(':hidden')) popup();
+	});
 });
 
 $("#myCanvas").swiperight(function(event, result) {
 			event.stopImmediatePropagation();
 			wipeStatus("Right",result,1);
 });
-		
+
 $("#myCanvas").swipeleft(function(event, result) {
 	event.stopImmediatePropagation();
 	wipeStatus("Left",result,1);
@@ -340,25 +340,25 @@ $('#myCanvas').bind("touchstart click", function(event){
 				}
 				drawTrend(trendArray[i][5],heightFactor);
 			}
-			
+
 			//draw x, y axis of the chart
 			var canvas = document.getElementById("trendGraph");
 			var context = canvas.getContext("2d");
-			
+
 			context.save();
 			context.font = "28pt Calibri";
 			context.fillStyle = "#0000ff"; // text color
 			context.fillText(trendArray[i][0], 170, 30);
 			context.restore();
-			
+
 			context.save();
 			context.beginPath();
 			context.moveTo(120,40);
 			context.lineTo(120,220+40);
 			context.lineTo(600,220+40);
-			context.strokeStyle = "black";	
+			context.strokeStyle = "black";
 			context.stroke();
 			context.restore();
-		}	
+		}
 	}
 });

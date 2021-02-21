@@ -1,21 +1,23 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-		<link rel="stylesheet" type="text/css" href="Styles/jquery.mobile-1.0.1.css" />
+	<head>
+		<title>Infographics Generator - Service</title>
+
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="Styles/header.css" />
 		<link rel="stylesheet" type="text/css" href="Styles/drill_down.css" />
 		<link rel="stylesheet" type="text/css" href="Styles/service_style.css" />
-		<title>Infographics Generator - Service</title>
 		<script type="text/javascript" src="Scripts/HandleDate.js"></script>
 		<script type="text/javascript" src="Scripts/KPILocalStorage.js"></script>
 		<script type="text/javascript" src="Scripts/elements.js"></script>
-		<script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="Scripts/jquery.mobile-1.0.1.js"></script>
         <script>
             window.onload = function(){
 				LoadJSON();
                 DrawService("myCanvas", initDate());
-            };	
+            };
         </script>
     </head>
     <body>
@@ -41,6 +43,6 @@
 		</div>
 		<script type="text/javascript" src="Scripts/drill-down-display.js"></script>
 		<script type="text/javascript" src="Scripts/draw-service.js"></script>
-		
+
     </body>
 </html>

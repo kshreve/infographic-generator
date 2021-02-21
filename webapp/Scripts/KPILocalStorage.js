@@ -2,7 +2,7 @@
  *Created by: Kevin Shreve*
  *Date : 2/18/12          *
  *************************/
-function LoadJSON() {
+window.LoadJSON = function LoadJSON() {
   var store = new Storage();
   $.getJSON("KPI_Handler.ashx", function(item) {
     $.each(item, function(i, kpi) {

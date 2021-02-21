@@ -203,7 +203,7 @@ function Pump_In_Sale(c, x, y, w, h, d) {
 
 // Name: DrawSection
 // Author: Louis Bodnar
-function DrawSection (c, x, y, w, h, d)
+window.DrawSection = function DrawSection (c, x, y, w, h, d)
 {
     var canvas = document.getElementById(c);
     var context = canvas.getContext("2d");
@@ -217,7 +217,7 @@ function DrawSection (c, x, y, w, h, d)
     // draw section
     context.beginPath();
     context.moveTo(x, y + pointerHeight + cornerCurveSize);
-    
+
     // left side
     context.lineTo(x, y+h);
 
@@ -244,7 +244,7 @@ function DrawSection (c, x, y, w, h, d)
         // pointer right side
         context.quadraticCurveTo(x + pointerDistance, y + pointerHeight, x + pointerDistance, y);
     }
-	
+
     // check if pointer is too far left
     if (pointerDistance - pointerHeight < cornerCurveSize)   {
         // pointer left side
@@ -313,7 +313,7 @@ function DrawSun (c, x, y, r)
 
     var centerX = x;
     var centerY = y;
-    var radius = r; 
+    var radius = r;
 
     context.beginPath();
     context.arc(centerX, centerY, r, 0, 2 * Math.PI, false);
@@ -473,7 +473,7 @@ function DrawPerson (c, x, y, h)
 
 // Name: DrawStripes
 // Author: Louis Bodnar
-function DrawStripes(c, x, y, w, h, d) 
+window.DrawStripes = function DrawStripes(c, x, y, w, h, d)
 {
     var canvas = document.getElementById(c);
     var context = canvas.getContext("2d");
@@ -522,7 +522,7 @@ function DrawStripes(c, x, y, w, h, d)
 function DrawPie(c, x, y, w, h, d) {
 	//clearCanvas(c);
     // data format
-    // 
+    //
     // accepts a percentage expressed as a decimal
     // example: DrawPie("myCanvas",0,0,100,100,.66); would display 66%
 
@@ -664,7 +664,7 @@ function DrawLostSale(c, x, y, w, h, d) {
     var ctx = canvas.getContext("2d");
 
     var img04 = new Image();
-	
+
     img04.onload = function () {
         ctx.save();
 	    ctx.scale(w/236,h/230);
@@ -759,7 +759,7 @@ function DrawLostProfit(c,x,y,w,h,d) {
 
     // Draw the text exclamation point
     context.font = "40px Arial";
-    context.fillStyle = "red";	
+    context.fillStyle = "red";
     context.fillText("$" + addCommas(d), x+190, y+100);
 
     context.textAlign = "center";
@@ -856,7 +856,7 @@ function DrawPlaid(c,x,y,w,h,d) {
 // Author: Kevin Shreve
 // Description: This changes the url in the address bar, without using <a href="index.html"></a>
 //  	This allows us to stay in fullscreen mode on the iPad
-function navigator_Go(url) {
+window.navigator_Go = function navigator_Go(url) {
     window.location.assign(url);
 }
 
@@ -867,7 +867,7 @@ function navigator_Go(url) {
 // Author:      Peter Chen
 // Purpose:     Draw Table
 // Arguments:   DrawTable(canvas_name, x_position, y_position);
-// Data format: 
+// Data format:
 // Example:     DrawTable("myCanvas", 0, 0);
 function DrawTable(c,x,y)
 {
@@ -897,7 +897,7 @@ function DrawTable(c,x,y)
 // Author:      Peter Chen
 // Purpose:     Draw chair (toward to the left)
 // Arguments:   DrawChairL(canvas_name, x_position, y_position);
-// Data format: 
+// Data format:
 // Example:     DrawChairL("myCanvas", 0, 0);
 function DrawChairL(c,x,y)
 {
@@ -913,7 +913,7 @@ function DrawChairL(c,x,y)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.moveTo(x, y + 70);
 	context.lineTo(x-40, y + 70);
@@ -929,7 +929,7 @@ function DrawChairL(c,x,y)
 // Author:      Peter Chen
 // Purpose:     Draw chair (toward to the right)
 // Arguments:   DrawChairR(canvas_name, x_position, y_position);
-// Data format: 
+// Data format:
 // Example:     DrawChairR("myCanvas", 0, 0);
 function DrawChairR(c,x,y)
 {
@@ -945,7 +945,7 @@ function DrawChairR(c,x,y)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.moveTo(x, y + 70);
 	context.lineTo(x+40, y + 70);
 	context.lineTo(x+40, y + 110);
@@ -961,7 +961,7 @@ function DrawChairR(c,x,y)
 // Author: 		Peter Chen
 // Purpose: 	Draws unique customers infographic element
 // Arguments:   DrawUniqueCustomers(canvas_name, x_position, y_position);
-// Data format: 
+// Data format:
 // Example:     DrawUniqueCustomers("myCanvas", 0, 0);
 function DrawUniqueCustomers(c,x,y) {
 	var canvas = document.getElementById(c);
@@ -1112,13 +1112,13 @@ function DrawUniqueCustomers(c,x,y) {
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
-	context.restore();			
+
+	context.restore();
 }
-	
+
 // Name: 		Draw Response
-// Author: 		Peter Chen 
-// Purpose: 	Response infographic elements, both phone and email 
+// Author: 		Peter Chen
+// Purpose: 	Response infographic elements, both phone and email
 // Arguments:   DrawResponse(canvas_name, x_position, y_position, Response_by_Mail_data, Response_by_Phone_data);
 // Data format: value
 // Example:     DrawResponse("myCanvas", 0, 0, 1000, 1200);
@@ -1144,12 +1144,12 @@ function DrawResponse(c, x, y, kpiMail, kpiPhone)  {
 
 	//draw rectangle in the back of the mail image
 	if(MailP <= 0.5) {
-		fillW= 700 * MailP; 
+		fillW= 700 * MailP;
 		fillH = 50;
 		MailP = 0;
 	}	else if(MailP > 0.5) {
 		MailP = MailP-0.5;
-		fillW= 350; 
+		fillW= 350;
 		fillH = 50;
 	}
 	context.fillRect(x+10, y+10, fillW, fillH);
@@ -1158,7 +1158,7 @@ function DrawResponse(c, x, y, kpiMail, kpiPhone)  {
 		fillH = 50;
 		context.fillRect(x+10,y+100, fillW, fillH);
 	}
-	
+
 	context.fillStyle="#FFA54F";
 	context.beginPath();
 	context.rect(x+376, y, 370, -120);
@@ -1169,21 +1169,21 @@ function DrawResponse(c, x, y, kpiMail, kpiPhone)  {
 
 	//draw rectangle in the back of the phone image
 	if(PhoneP <= 0.5) 	{
-		fillW= 760 * PhoneP; 
+		fillW= 760 * PhoneP;
 		fillH = 80;
 		PhoneP = 0;
 	}	else if(PhoneP > 0.5)	{
 		PhoneP = PhoneP-0.5;
-		fillW= 720/2; 
+		fillW= 720/2;
 		fillH = 80;
 	}
-	context.fillRect(x+740, y+80, x-20-fillW, fillH);			
+	context.fillRect(x+740, y+80, x-20-fillW, fillH);
 	if(PhoneP > 0)	{
 		fillW= 720 * PhoneP;
 		fillH = 80;
 		context.fillRect(x+740,y+8, x-20-fillW, fillH);
-	}					
-	
+	}
+
 	//load the response.png
 	img.onload = function()
 	{
@@ -1191,12 +1191,12 @@ function DrawResponse(c, x, y, kpiMail, kpiPhone)  {
 	}
 	img.src = 'images/response.png';
 	context.restore();
-	
+
 }
-	
+
 // Name: 		Draw Sales
-// Author: 		Peter Chen 
-// Purpose: 	Sales from lead infographic elements; new, used, and lost 
+// Author: 		Peter Chen
+// Purpose: 	Sales from lead infographic elements; new, used, and lost
 // Arguments:   DrawSales(canvas_name, x_position, y_position, Sales_from_Lead_Lost_data, Sales_from_Lead_New_data, Sales_from_Lead_Used_data);
 // Data format: value
 // Example:     DrawSales("myCanvas", 0, 0, 1000, 1200, 200);
@@ -1224,7 +1224,7 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	//draw man
 	context.moveTo(x -50, y + 65);
 	context.lineTo(x - 80, y + 100);
@@ -1241,33 +1241,33 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.moveTo(x -50, y + 40);
 	context.quadraticCurveTo(x - 60, y+20, x - 100, y+15);
 	context.lineWidth = lineWidth;
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.moveTo(x-50, y + 45);
 	context.quadraticCurveTo(x - 60, y+30, x - 100, y +30);
 	context.lineWidth = lineWidth;
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	//draw door
 	context.beginPath();
 	context.fillStyle="#000000";
 	context.beginPath();
 	context.rect(x, y-60, 80, 170);
 	context.fill();
-	
+
 	context.beginPath();
 	context.arc(x+15, y+20, 5, 0, 2 * Math.PI, false);
 	context.fillStyle = "#ffffff";
 	context.fill();
-	
+
 	//draw whiteboard
 	context.beginPath();
 	context.moveTo(x-410, y - 50);
@@ -1283,7 +1283,7 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.stroke();
 	context.fillStyle = "#ffffff";
 	context.fill();
-	
+
 	//draw marker
 	context.beginPath();
 	context.moveTo(x-240, y - 45);
@@ -1292,28 +1292,28 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#ffffff";
 	context.stroke();
-	
-	
+
+
 	//draw tables
 	DrawTable(c,x-300,y+110);
 	DrawTable(c,x-565,y+110);
 
 
-	
-	//draw chairs	
+
+	//draw chairs
 	DrawChairL(c,x-125,y);
 	DrawChairL(c,x-395,y);
 	DrawChairR(c,x-635,y);
 	DrawChairR(c,x-375,y);
 
-	
-	
+
+
 	//draw man (big)
 	context.beginPath();
 	context.arc(x - 150, y, 20, 0, 2 * Math.PI, false);
 	context.fillStyle = "#000000";
 	context.fill();
-	
+
 	context.beginPath();
 	context.moveTo(x-150, y);
 	context.lineTo(x-150, y + 60);
@@ -1323,7 +1323,7 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.moveTo(x-150, y+40);
 	context.quadraticCurveTo(x - 210, y +50, x-150, y+10);
@@ -1331,12 +1331,12 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.arc(x - 420, y, 20, 0, 2 * Math.PI, false);
 	context.fillStyle = "#000000";
 	context.fill();
-	
+
 	context.beginPath();
 	context.moveTo(x-420, y);
 	context.lineTo(x-420, y + 60);
@@ -1346,7 +1346,7 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.moveTo(x-420, y+40);
 	context.quadraticCurveTo(x - 490, y +50, x-420, y+10);
@@ -1354,14 +1354,14 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	//draw man (small)
 	context.beginPath();
 	context.arc(x - 350, y, 20, 0, 2 * Math.PI, false);
 	context.fillStyle = "#000000";
 	context.fill();
 	context.beginPath();
-	
+
 	context.moveTo(x-350, y);
 	context.lineTo(x-350, y + 60);
 	context.lineTo(x-320, y + 60);
@@ -1370,7 +1370,7 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.moveTo(x-350, y+40);
 	context.quadraticCurveTo(x - 330, y +50, x-320, y+10);
@@ -1378,13 +1378,13 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-			
+
 	context.beginPath();
 	context.arc(x - 610, y, 20, 0, 2 * Math.PI, false);
 	context.fillStyle = "#000000";
 	context.fill();
 	context.beginPath();
-	
+
 	context.moveTo(x-610, y);
 	context.lineTo(x-610, y + 60);
 	context.lineTo(x-580, y + 60);
@@ -1393,7 +1393,7 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.moveTo(x-610, y+40);
 	context.quadraticCurveTo(x - 590, y +50, x-570, y+10);
@@ -1401,22 +1401,22 @@ function DrawSales(c, x, y, kpiLost, kpiNew, kpiOld)
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	//load two cars' images
 	img1.onload = function()
 	{
 		context.drawImage(img1, x-295, y + 8, img1.width/4, img1.height/4);
 	}
-	
+
 	img2.onload = function()
 	{
 		context.drawImage(img2, x-565, y +10, img2.width/1.75, img2.height/1.75);
 	}
 	context.restore();
 }
-	
-//DrawAvgRespTime: Infographic Element 
-//Author: Kevin Shreve	
+
+//DrawAvgRespTime: Infographic Element
+//Author: Kevin Shreve
 //Usage: DrawAvgRespTime("myCanvas",0,100,60);
 function DrawAvgRespTime (c, x, y, d) {
 	var canvas = document.getElementById(c);
@@ -1438,7 +1438,7 @@ function DrawAvgRespTime (c, x, y, d) {
 function DrawClockDial(c,x,y) {
 	var canvas = document.getElementById(c);
 	var ctx = canvas.getContext("2d");
-	
+
 	ctx.fillStyle = "C9C9C9";
 	ctx.fillRect(x+85,y-(15/2),10,15);
 	ctx.fillStyle = "#000";
@@ -1450,7 +1450,7 @@ function DrawClockDial(c,x,y) {
 function DrawClockFace(c,x,y,d) {
 	var canvas = document.getElementById(c);
 	var ctx = canvas.getContext("2d");
-		
+
 	DrawCircle(c,x,y,90,"#C9C9C9");
 	DrawCircle(c,x,y,70,"#FFF");
 	DrawCircle(c,x,y,65,"#C9C9C9");
@@ -1464,18 +1464,18 @@ function DrawClockFace(c,x,y,d) {
 		ctx.translate(-x,-y);
 		ctx.fillRect(x-5,y-75,10,20);
 		ctx.restore();
-	}	
+	}
 	DrawHand(c,x,y,d);
 }
 
 //DrawHand : Draws the minute and hour hands of the clock
-//Author: Kevin Shreve	
-//Helper function for average response time, to be able to position the arms of 
+//Author: Kevin Shreve
+//Helper function for average response time, to be able to position the arms of
 //the clock without messing with context of everything else.
 function DrawHand(c,x,y,d) {
 	var canvas = document.getElementById(c);
 	var ctx = canvas.getContext("2d");
-	
+
 	var hand = new Image;
 	hand.src = 'images/watcharm.png';
 	hand.onload = function () {
@@ -1486,15 +1486,15 @@ function DrawHand(c,x,y,d) {
 		//hour hand
 		ctx.drawImage(hand,x-(hand.width/2),y-(hand.height/2)-30,50,60);
 		ctx.restore();
-		
+
 		ctx.save();
 		ctx.translate(x,y);
 		ctx.rotate( d*6*(Math.PI/180));
 		ctx.translate(-x,-y);
 		//minute hand
-		ctx.drawImage(hand,x-(hand.width/2),y-(hand.height/2)-45);	
+		ctx.drawImage(hand,x-(hand.width/2),y-(hand.height/2)-45);
 		ctx.restore();
-	}	
+	}
 }
 
 //DrawCircle: Cirlce with color option
@@ -1505,7 +1505,7 @@ function DrawCircle(c,x,y,r,color) {
 	var context = canvas.getContext("2d");
 	var centerX = x;
 	var centerY = y;
-	var radius = r; 
+	var radius = r;
 
 	context.beginPath();
 	context.arc(centerX, centerY, r, 0, 2 * Math.PI, false);
@@ -1514,7 +1514,7 @@ function DrawCircle(c,x,y,r,color) {
 }
 
 // Name:		Draw Close Rate
-// Author: 		Peter Chen 
+// Author: 		Peter Chen
 // Purpose: 	Close Rate infographic elements
 // Arguments:   DrawCloseRate(canvas_name, x_position, y_position, Close_Rate_data);
 // Data format: value
@@ -1527,16 +1527,16 @@ function DrawCloseRate(c,x,y,d) {
 	//draw ATM machine
 	DrawMachine(c,x-35,y-5);
 	DrawMachine(c,x+100,y-5);
-	
+
 	context.font = "32pt Calibri";
 	context.fillStyle = "#FFFFFF";
 	context.fillText("Close Rate", x-70, y-230);
-	
-	
+
+
 	context.font = "24pt Calibri";
 	context.fillStyle = "#000000";
 	context.fillText(d*100+"%", x-19, y-150);
-	
+
 	//draw door
 	context.save();
 	context.beginPath();
@@ -1544,21 +1544,21 @@ function DrawCloseRate(c,x,y,d) {
 	context.beginPath();
 	context.rect(x-180, y-175, 80, 170);
 	context.fill();
-	
+
 	context.beginPath();
 	context.arc(x-115, y-80, 5, 0, 2 * Math.PI, false);
 	context.fillStyle = "#ffffff";
 	context.fill();
 	context.restore();
-	
-			
+
+
 	//draw walking man
 	context.beginPath();
 	context.arc(x-50, y-140, 20, 0, 2 * Math.PI, false);
 	context.fillStyle = "#000000";
 	context.fill();
 	context.beginPath();
-	
+
 	context.moveTo(x-50, y - 140);
 	context.lineTo(x-50, y - 80);
 	context.lineTo(x-70, y - 40);
@@ -1576,14 +1576,14 @@ function DrawCloseRate(c,x,y,d) {
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	//draw stand man
 	context.beginPath();
 	context.arc(x+150, y-150, 20, 0, 2 * Math.PI, false);
 	context.fillStyle = "#000000";
 	context.fill();
 	context.beginPath();
-	
+
 	context.moveTo(x+150, y - 150);
 	context.lineTo(x+150, y - 80);
 	context.lineTo(x+155, y - 40);
@@ -1603,25 +1603,25 @@ function DrawCloseRate(c,x,y,d) {
 }
 
 // Name: 		Draw Machine
-// Author: 		Peter Chen 
+// Author: 		Peter Chen
 // Purpose: 	ATM machine infographic elements
 // Arguments:   DrawMachine(canvas_name, x_position, y_position);
-// Data format: 
+// Data format:
 // Example:     DrawMachine("myCanvas", 0, 0);
 function DrawMachine(c,x,y) {
 	var canvas = document.getElementById(c);
 	var context = canvas.getContext("2d");
 	var lineWidth = 3;
-	
+
 	context.save();
-	
+
 	//draw machine
 	context.beginPath();
 	context.fillStyle="#383838";
 	context.beginPath();
 	context.rect(x, y, 100, -200);
 	context.fill();
-	
+
 	context.beginPath();
 	context.fillStyle="#ffffff";
 	context.beginPath();
@@ -1638,13 +1638,13 @@ function DrawMachine(c,x,y) {
 	context.lineCap = "round";
 	context.strokeStyle = "#C0C0C0";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.fillStyle="#ffffff";
 	context.beginPath();
 	context.rect(x+10, y-60, 60, -50);
 	context.fill();
-	
+
 	context.beginPath();
 	context.moveTo(x+5, y -55);
 	context.lineTo(x+75, y -55);
@@ -1656,7 +1656,7 @@ function DrawMachine(c,x,y) {
 	context.strokeStyle = "#C0C0C0";
 	context.stroke();
 	context.restore();
-	
+
 	context.beginPath();
 	context.fillStyle="#383838";
 	context.beginPath();
@@ -1670,7 +1670,7 @@ function DrawMachine(c,x,y) {
 	context.rect(x+31, y-94, 16, -15);
 	context.rect(x+50, y-94, 16, -15);
 	context.fill();
-	
+
 	//write numbers
 	context.font = "12pt Calibri";
 	context.fillStyle = "#ffffff";
@@ -1683,36 +1683,36 @@ function DrawMachine(c,x,y) {
 	context.fillText("7", x+15, y-65);
 	context.fillText("8", x+34, y-65);
 	context.fillText("9", x+53, y-65);
-	
+
 	context.beginPath();
 	context.fillStyle="#ffffff";
 	context.beginPath();
 	context.rect(x+83, y-70, 10, -40);
 	context.fill();
-	
+
 	context.beginPath();
 	context.fillStyle="#C0C0C0";
 	context.beginPath();
 	context.rect(x+85, y-72, 6, -36);
 	context.fill();
-	
+
 	context.beginPath();
 	context.fillStyle="#ffffff";
 	context.beginPath();
 	context.rect(x+20, y-25, 50, -20);
 	context.fill();
-	
+
 	context.beginPath();
 	context.fillStyle="#383838";
 	context.beginPath();
 	context.rect(x+22, y-27, 46, -16);
 	context.fill();
-	
+
 	context.restore();
 }
 
 // Name: 		Draw Prospect Count
-// Author: 		Peter Chen 
+// Author: 		Peter Chen
 // Purpose: 	Prospect Count infographic elements
 // Arguments:   DrawProspectCount(canvas_name, x_position, y_position, data);
 // Data format: value
@@ -1736,15 +1736,15 @@ function DrawProspectCount(c,x,y,d) {
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	//
 	context.beginPath();
 	context.arc(x+130, y-80, 25, Math.PI,  2* Math.PI, false);
 	context.rect(x+105, y-70 , 50, -10);
 	context.fillStyle = "#000000";
 	context.fill();
-	
-	
+
+
 	context.beginPath();
 	context.moveTo(x+100, y-113);
 	context.lineTo(x+160, y-113);
@@ -1757,15 +1757,15 @@ function DrawProspectCount(c,x,y,d) {
 	context.stroke();
 	context.fillStyle = "#000000";
 	context.fill();
-	
-	
+
+
 	//draw sit man
 	context.beginPath();
 	context.arc(x+50, y-120, 20, 0, 2 * Math.PI, false);
 	context.fillStyle = "#000000";
 	context.fill();
 	context.beginPath();
-	
+
 	context.moveTo(x+50, y - 120);
 	context.lineTo(x+40, y - 70);
 	context.moveTo(x+48, y - 90);
@@ -1776,21 +1776,21 @@ function DrawProspectCount(c,x,y,d) {
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	//draw stand man
 	context.beginPath();
 	context.arc(x-45, y-140, 20, 0, 2 * Math.PI, false);
 	context.fillStyle = "#000000";
 	context.fill();
 	context.beginPath();
-	
+
 	context.moveTo(x-45, y - 150);
 	context.lineTo(x-45, y - 5);
 	context.lineWidth = lineWidth;
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.moveTo(x-45, y - 70);
 	context.quadraticCurveTo(x -60, y -25, x-70, y-10);
@@ -1798,7 +1798,7 @@ function DrawProspectCount(c,x,y,d) {
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.moveTo(x-45, y - 110);
 	context.quadraticCurveTo(x -30, y -45, x-10, y-110);
@@ -1806,7 +1806,7 @@ function DrawProspectCount(c,x,y,d) {
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	context.beginPath();
 	context.moveTo(x-45, y - 110);
 	context.lineTo(x-70, y - 70);
@@ -1814,12 +1814,12 @@ function DrawProspectCount(c,x,y,d) {
 	context.lineCap = "round";
 	context.strokeStyle = "#000000";
 	context.stroke();
-	
+
 	//write text
 	context.font = "32pt Calibri";
 	context.fillStyle = "#ffffff";
 	context.fillText(d, x+40, y-20);
-	
+
 	context.font = "32pt Calibri";
 	context.fillStyle = "#FFFFFF";
 	context.fillText("Prospect Count", x-100, y-230);
@@ -1828,7 +1828,7 @@ function DrawProspectCount(c,x,y,d) {
 }
 
 // Name: 		Draw unopned and new brand lead
-// Author: 		Peter Chen 
+// Author: 		Peter Chen
 // Purpose: 	Unopened and new brand lead infographic elements
 // Arguments:   DrawUnopenedLead(canvas_name, x_position, y_position, unopened_data, new_data);
 // Data format: value
@@ -1861,7 +1861,7 @@ function DrawUnopenedLead(c,x,y,d,d2) {
 }
 
 // Name: 		Draw New 3PL Lead
-// Author: 		Peter Chen 
+// Author: 		Peter Chen
 // Purpose: 	New 3PL Lead infographic elements
 // Arguments:   Draw3PL(canvas_name, x_position, y_position, width, height, new_3PL_data);
 // Data format: value
@@ -1887,16 +1887,16 @@ function Draw3PL(c,x,y,w,h,myArray){
 	var bar_h = (h-border)/len;
 	var gradient = cxt.createLinearGradient(w/2, 50, w/2, h);
 	gradient.addColorStop(0, '#000');
-	gradient.addColorStop(0.1, '#eee'); 
-	gradient.addColorStop(0.5, '#fff'); 
-	gradient.addColorStop(1, '#000'); 
-	
+	gradient.addColorStop(0.1, '#eee');
+	gradient.addColorStop(0.5, '#fff');
+	gradient.addColorStop(1, '#000');
+
 	max = max - border;
 	txtArea = w*0.2;
 	full = w -(border*2)-txtArea;
 	cxt.strokeStyle='#fff';
 	cxt.save();
-	
+
 	cxt.shadowOffsetX = border/2;
 	cxt.shadowOffsetY = border/2;
 	cxt.shadowBlur = border/2;
@@ -1908,7 +1908,7 @@ function Draw3PL(c,x,y,w,h,myArray){
 		cxt.fillRect(border+txtArea+x,(border*2)+(bar_h*n)+y,(myArray[key]/max)*full,bar_h-border);
 		n++;
 	}
-	
+
 	cxt.shadowColor = "#fff";
 	n=0;
 	for(key in myArray)
@@ -1916,7 +1916,7 @@ function Draw3PL(c,x,y,w,h,myArray){
 		cxt.strokeRect(border+txtArea+x,(border*2)+(bar_h*n)+y,(myArray[key]/max)*full,bar_h-border);
 		n++;
 	}
-	
+
 	cxt.shadowOffsetX = border/-2;
 	n=0;
 	for(key in myArray)
@@ -1943,7 +1943,7 @@ function Draw3PL(c,x,y,w,h,myArray){
 	{
 		cxt.fillStyle=c2;
 		cxt.fillText(key, (border+10)+x-45, (border*2)+(bar_h*n)+(bar_h/1.8)+y,txtArea-15);
-		cxt.fillText(myArray[key],  (border+10+txtArea)+x, 
+		cxt.fillText(myArray[key],  (border+10+txtArea)+x,
 						(border*2)+(bar_h*n)+(bar_h/1.8)+y,full);
 		n++;
 	}
@@ -1956,7 +1956,7 @@ function Draw3PL(c,x,y,w,h,myArray){
 }
 
 // Name: 		DrawEffectiveness
-// Author: 		Peter Chen 
+// Author: 		Peter Chen
 // Purpose: 	New 3PL Lead infographic elements
 // Arguments:   DrawEffectiveness(canvas_name, x_position, y_position, date, Dealer_data, Brand_data);
 // Data format: value
@@ -1966,12 +1966,12 @@ function DrawEffectiveness(c,x,y,date,d,b)
 	var canvas = document.getElementById(c);
 	var context = canvas.getContext("2d");
 	context.save();
-				
+
 	var lineWidth = 7;
 	var maxHeight = 200;
 	var bHeight = 0;
 	var dHeight = 0;
-	
+
 	bHeight = maxHeight * (b-1);
 	dHeight = maxHeight * (d-1);
 	//write text
@@ -1981,8 +1981,8 @@ function DrawEffectiveness(c,x,y,date,d,b)
 	context.fillText("Effectiveness", x, y);
 	context.fillText("100%" , x+640, y+15);
 	context.fillText(monthname[date.getMonth()] , x, y+30);
-	
-	
+
+
 	context.beginPath();
 	context.moveTo(x+60, y +20);
 	context.lineTo(x+700, y +20);
@@ -1990,8 +1990,8 @@ function DrawEffectiveness(c,x,y,date,d,b)
 	context.lineCap = "round";
 	context.strokeStyle = "#ffffff";
 	context.stroke();
-	
-	
+
+
 	context.beginPath();
 	context.arc(x+310, y+17-bHeight, 75, Math.PI,  2* Math.PI, false);
 	context.rect(x+235, y+17 , 150, -bHeight);
@@ -2011,7 +2011,7 @@ function DrawEffectiveness(c,x,y,date,d,b)
 	context.fillText(Math.round(b*100)+"%", x+280, y);
 	context.fillText(Math.round(d*100)+"%", x+490, y+60);
 	context.fillText("Dealer", x+470, y+90);
-	 
+
 	context.restore();
 }
 
@@ -2025,10 +2025,10 @@ function talkBub(c,talkbubX,talkbubY,d) {
 	context.translate(-talkbubX,-talkbubY);
 	DrawSection(c,talkbubX, talkbubY, 120,120, [20,d]);
 	context.restore();
-	
+
 	talkbubX = talkbubX+225;
 	talkbubY = talkbubY-120;
-	
+
 	//Draw the other half of the bubble with rounded edges
 	context.save();
 	context.translate(talkbubX,talkbubY);

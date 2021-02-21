@@ -5,15 +5,15 @@
 //if there is a radius with no width and height, just pass the radius twice
 var trendArray=new Array();
 
-function DrawLead(c,date) 
+window.DrawLead = function DrawLead(c,date)
 {
 //Draw the main background
 	var canvas = document.getElementById(c);
     var context = canvas.getContext("2d");
 	context.save();
 	var background = new Image();
-	
-	background.onload = function () { 
+
+	background.onload = function () {
 		context.drawImage(background,0,0);
 		DrawLead2(c,date);
 	}
@@ -28,8 +28,8 @@ function DrawLead2(c,date) {
     var context = canvas.getContext("2d");
 	context.save();
 	var stone = new Image();
-	
-	stone.onload = function () { 
+
+	stone.onload = function () {
 		context.drawImage(stone,29,500,745,500);
 		DrawLead3(c,date);
 	}
@@ -37,15 +37,15 @@ function DrawLead2(c,date) {
 	context.restore();
 }
 
-function DrawLead3(c,date) { 
+function DrawLead3(c,date) {
 
-//draw the separator 
+//draw the separator
 	var canvas = document.getElementById(c);
     var context = canvas.getContext("2d");
 	context.save();
 	var sep = new Image();
-	
-	sep.onload = function () { 
+
+	sep.onload = function () {
 		context.drawImage(sep,0,150);
 		DrawLead4(c,date);
 	}
@@ -53,14 +53,14 @@ function DrawLead3(c,date) {
 	context.restore();
 }
 
-function DrawLead4(c,date) { 
-//Draw another separator 
+function DrawLead4(c,date) {
+//Draw another separator
 	var canvas = document.getElementById(c);
     var context = canvas.getContext("2d");
 	context.save();
 	var sep2 = new Image();
-	
-	sep2.onload = function () { 
+
+	sep2.onload = function () {
 		context.drawImage(sep2,0,620);
 		DrawLead5(c,date);
 	}
@@ -68,19 +68,19 @@ function DrawLead4(c,date) {
 	context.restore();
 }
 
-function DrawLead5(c,date) { 
+function DrawLead5(c,date) {
 //Draw the second and third section background
 	var canvas = document.getElementById(c);
     var context = canvas.getContext("2d");
 	context.save();
 	var back2 = new Image();
 	var back3 = new Image();
-	
-	back2.onload = function () { 
+
+	back2.onload = function () {
 		context.drawImage(back2,29,1007,745,439);
 	}
 	back3.onload = function(){
-		context.drawImage(back3,29,1475,745,281)		
+		context.drawImage(back3,29,1475,745,281)
 		DrawLead6(c,date);
 	}
 	back2.src = 'images/lead_background2.jpg';
@@ -89,11 +89,11 @@ function DrawLead5(c,date) {
 }
 
 
-function DrawLead6(c,date) { 
+function DrawLead6(c,date) {
 	var canvas = document.getElementById(c);
     var context = canvas.getContext("2d");
 	context.save();
-	
+
 	//Kpi
 	var kpiUnique = addCommas(GetKPI(date,"Unique_Customers"));
 	var kpiMail = GetKPI(date,"Response_Method_Email");
@@ -122,17 +122,17 @@ function DrawLead6(c,date) {
 						'Dealix':kpiNew3PL_Dealix,
 						'Automotive':kpiNew3PL_Automotive,
 						'Jumpstart':kpiNew3PL_Jumpstart};
-						
+
 	//Draw Lead elements
 	DrawUniqueCustomers("myCanvas", 200, 190);
 	DrawResponse("myCanvas", 28, 425, kpiMail, kpiPhone);
 	DrawAvgRespTime ("myCanvas", 130, 685, kpiAve);
-	DrawSales("myCanvas", 690, 860, kpiLost, kpiNew, kpiOld);		
+	DrawSales("myCanvas", 690, 860, kpiLost, kpiNew, kpiOld);
 	DrawUnopenedLead("myCanvas",30,1100,kpiUnopened, kpiNewBrand);
 	Draw3PL("myCanvas",385,1170,380,300,kpiNew3PL);
-	DrawCloseRate("myCanvas", 214, 1755, kpiClose);		
+	DrawCloseRate("myCanvas", 214, 1755, kpiClose);
 	DrawProspectCount("myCanvas", 590, 1750, kpiProspect);
-	
+
 	context.restore();
 	//push elements into array
 	var offset=100;
@@ -147,7 +147,7 @@ function DrawLead6(c,date) {
 	trendArray.push(['New 3PL Leads', 350, 1145+offset, 424, 295,[[GetTrendKPI(date, 'New_3PL_Leads_Kelly_Blue_Book'),"#ff9b00","Kelly Blue Book"],[GetTrendKPI(date, 'New_3PL_Leads_Edmunds'),"#f54c08","Edmunds"],[GetTrendKPI(date, 'New_3PL_Leads_Dealix'),"#b4213f","Dealix"],[GetTrendKPI(date, 'New_3PL_Leads_Automotive.com'),"#69039d","Automotive.com"],[GetTrendKPI(date, 'New_3PL_Leads_Jumpstart'),"#283577","Jumpstart"]],'<p>Unopened Leads: The number of leads that have not been contacted by a dealership</p><p>The number of new leads received from a 3rd party internet site (e.g. - kbb.com)</p>']);
 	trendArray.push(['Close Rate', 30, 1480+offset, 410, 275,GetTrendKPI(date, 'Close_Rate'),'<p>The percentage of customers who have bought a vehicle from online leads</p>']);
 	trendArray.push(['Prospect Count', 470, 1480+offset, 300, 275,GetTrendKPI(date, 'Prospect_Count'),'<p>Prospects are potential sales customers provided by your manufacturer and Urban Science</p>']);
-			
+
 	//Text
 
 	//kpiUnique
@@ -160,12 +160,12 @@ function DrawLead6(c,date) {
 	context.font = "48pt Calibri";
 	context.fillText(kpiUnique,x + 520, y+ 272);
 	context.restore();
-	
+
 
 	//Response Method
 	var kpiMail = addCommas(GetKPI(date,"Response_Method_Email"));
 	var kpiPhone = addCommas(GetKPI(date,"Response_Method_Phone"));
-	
+
 	var x = 7;
 	var y = -240;
 	context.save();
@@ -199,7 +199,7 @@ function DrawLead6(c,date) {
 	context.fillText(kpiOld, x + 300,y );
 	context.fillText(kpiLost, x + 590,y );
 	context.restore();
-	
+
 	context.save();
 	context.fillStyle = "#000000";
 	context.font = "28pt Calibri";
@@ -217,40 +217,40 @@ var checkEle = function () {
 	var p = $('#ele');
 	var header = $('#header');
 	var offset = p.offset();
-	
+
 	if (offset.top <=764 ) {
 		$('#ele').offset({top:header.offset().top+78});
 	} else if (offset.top >764 && offset.top < 1530) {
 		$('#ele').offset({top:offset.top+10});
-	} else if (offset.top >= 1530) { 
+	} else if (offset.top >= 1530) {
 			$('#ele').offset({top:1530});
-	} 
+	}
 };
 setInterval(checkEle, 400);
 
 // Author:      Lok Cheung
 // Purpose:		Listen for the user to click or touch the drill down display, then close it
 $(document).ready(function () {
-	// if user clicked on button, the overlay layer or the dialogbox, close the dialog	
-	$('#dialog-overlay, #dialog-box').bind("touchstart click", function () {		
-		$('#dialog-overlay, #dialog-box').hide();		
+	// if user clicked on button, the overlay layer or the dialogbox, close the dialog
+	$('#dialog-overlay, #dialog-box').bind("touchstart click", function () {
+		$('#dialog-overlay, #dialog-box').hide();
 		return false;
 	});
-	
+
 	// if user resize the window, call the same function again
-	// to make sure the overlay fills the screen and dialogbox aligned to center	
+	// to make sure the overlay fills the screen and dialogbox aligned to center
 	$(window).resize(function () {
-		
+
 		//only do it if the dialog box is not hidden
-		if (!$('#dialog-box').is(':hidden')) popup();		
-	});		
+		if (!$('#dialog-box').is(':hidden')) popup();
+	});
 });
 
 $("#myCanvas").swiperight(function(event, result) {
 			event.stopImmediatePropagation();
 			wipeStatus("Right",result,3);
 });
-		
+
 $("#myCanvas").swipeleft(function(event, result) {
 			event.stopImmediatePropagation();
 			wipeStatus("Left",result,3);
@@ -300,7 +300,7 @@ $('#myCanvas').bind("touchstart click", function(event){
 				}
 				drawTrend(trendArray[i][5],heightFactor);
 			}
-			
+
 			//draw x, y axis of the chart
 			var canvas = document.getElementById("trendGraph");
 			var context = canvas.getContext("2d");
@@ -310,15 +310,15 @@ $('#myCanvas').bind("touchstart click", function(event){
 			context.fillStyle = "#0000ff"; // text color
 			context.fillText(trendArray[i][0], 170, 30);
 			context.restore();
-			
+
 			context.save();
 			context.beginPath();
 			context.moveTo(120,40);
 			context.lineTo(120,220+40);
 			context.lineTo(600,220+40);
-			context.strokeStyle = "black";	
+			context.strokeStyle = "black";
 			context.stroke();
 			context.restore();
-		}	
+		}
 	}
 });
