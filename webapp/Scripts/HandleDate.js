@@ -4,9 +4,11 @@ var currDate;
 
 window.initDate = function initDate() {
   if (!currDate) {
-    currDate = new Date();
+    //Note: Freeze in time.
+    currDate = new Date(2012,2,1);
     GetFullMonth(currDate, 0);
   }
+
   return currDate;
 }
 
