@@ -1,14 +1,19 @@
-﻿/*************************
+﻿import data from '../data.json'
+/*************************
  *Created by: Kevin Shreve*
  *Date : 2/18/12          *
  *************************/
 window.LoadJSON = function LoadJSON() {
   var store = new Storage();
-  $.getJSON("KPI_Handler.ashx", function(item) {
+
+  $.each(data, function(i, kpi) {
+    store.set(kpi.record_number, kpi);
+  });
+  /*$.getJSON("KPI_Handler.ashx", function(item) {
     $.each(item, function(i, kpi) {
       store.set(kpi.record_number, kpi);
     });
-  });
+  });*/
 }
 
 //Helper function so that we can get/set easily on the local storage
@@ -55,7 +60,7 @@ function SearchKPIByDate(date) {
 }
 
 // Allows KPI data to be more easily retrieved
-function GetKPI(date, kpiName) {
+window.GetKPI = function GetKPI(date, kpiName) {
   var kpiArray = SearchKPIByDate(date);
   var kpiData = "";
 
@@ -72,7 +77,7 @@ function GetKPI(date, kpiName) {
 // Author: Kevin Shreve, Lok Cheung
 // Description: Get data of a KPI over months
 // Remarks: this function does not deal with data for over a year
-function GetTrendKPI(date, kpiName) {
+window.GetTrendKPI = function GetTrendKPI(date, kpiName) {
   var kpiArray = new Array();
   var kpi;
   var month;
