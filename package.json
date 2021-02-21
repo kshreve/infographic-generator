@@ -1,0 +1,14 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "dependencies": {
+    "parcel-bundler": "1.12.4"
+  },
+  "scripts": {
+    "build:index": "parcel build webapp/Index.html",
+    "build:sales": "parcel build webapp/Sales.html",
+    "build:service": "parcel build webapp/Service.html",
+    "build:lead": "parcel build webapp/Lead.html",
+    "build": "cd webapp && npm run build:index && npm run build:lead && npm run build:service && npm run build:sales"
+  }
+}

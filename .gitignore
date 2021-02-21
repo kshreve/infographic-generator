@@ -12,9 +12,6 @@
 /webapp/App_Data
 /webapp/bin
 /webapp/KevinTest.html
-/webapp/.cache
-/webapp/dist
-/webapp/node_modules
 /documents/presentations/beta-presentation/Index Landscape.png
 /documents/presentations/beta-presentation/Index Portrait.png
 /documents/presentations/beta-presentation/Lead1.png
@@ -23,4 +20,8 @@
 /documents/presentations/beta-presentation/Sales2.png
 /documents/presentations/beta-presentation/Service1.png
 /documents/presentations/beta-presentation/Service2.png
+
 .idea
+.cache
+/dist
+/node_modules
