@@ -94,8 +94,7 @@ function dateRange() {
 
   for(var i = 0, l = locStorage.size(); i < l; i++) {
     var value = locStorage.get(i);
-    console.log(value,i);
-    debugger;
+
     //find the newest year
     var tempYear = FormatDate(value.KPI_Date).getFullYear();
     var tempMonth = FormatDate(value.KPI_Date).getMonth();
