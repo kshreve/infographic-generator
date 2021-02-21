@@ -28,7 +28,7 @@ function wiggle() {
   $("#month").animate({ "left": "+=10px" }, 100);
 }
 
-function changeMonth(x, whichInfo) {
+window.changeMonth = function changeMonth(x, whichInfo) {
   var newMonth = currDate.getMonth() + x;
   if (insideDateRange(newMonth)) {
     currDate.setMonth(newMonth);
@@ -67,7 +67,7 @@ function changeMonth(x, whichInfo) {
 }
 
 //check if it is within our range, and then return true or false based on those values.
-function insideDateRange(month) {
+window.insideDateRange = function insideDateRange(month) {
   var bool = 0;
   var tempDate = new Date()
   tempDate.setFullYear(currDate.getFullYear(), month, currDate.getDay());
@@ -89,11 +89,13 @@ function insideDateRange(month) {
 
 ////Finding the total range that our data spans.
 function dateRange() {
-  var locStorage = new Storage();
+  var locStorage = new KPILocalStorage();
   var FirstMonth = 13, FirstYear = 3099, LastMonth = 0, LastYear = 0;
 
   for(var i = 0, l = locStorage.size(); i < l; i++) {
     var value = locStorage.get(i);
+    console.log(value,i);
+    debugger;
     //find the newest year
     var tempYear = FormatDate(value.KPI_Date).getFullYear();
     var tempMonth = FormatDate(value.KPI_Date).getMonth();
@@ -113,7 +115,7 @@ function dateRange() {
   return [FirstMonth, FirstYear, LastMonth, LastYear];
 }
 
-function wipeStatus(dir, result, whichInfographic) {
+window.wipeStatus = function wipeStatus(dir, result, whichInfographic) {
   if (dir == "Right") {
     changeMonth(-1, whichInfographic);
   }

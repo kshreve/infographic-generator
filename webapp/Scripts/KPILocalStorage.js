@@ -4,7 +4,7 @@
  *Date : 2/18/12          *
  *************************/
 window.LoadJSON = function LoadJSON() {
-  var store = new Storage();
+  var store = new KPILocalStorage();
 
   $.each(data, function(i, kpi) {
     store.set(kpi.record_number, kpi);
@@ -17,7 +17,7 @@ window.LoadJSON = function LoadJSON() {
 }
 
 //Helper function so that we can get/set easily on the local storage
-function Storage() {
+window.KPILocalStorage = function KPILocalStorage() {
   this.get = function(key) {
     return JSON.parse(window.localStorage.getItem(key));
   };
@@ -34,14 +34,14 @@ function Storage() {
 }
 
 //Creates a properly formatted date out of the default ASP.NET date which looks like /DATE(0000000)/ and turns into Jan. 01, 2012 looking date
-function FormatDate(date) {
+window.FormatDate = function FormatDate(date) {
   return new Date(parseInt(date.substr(6)));
 }
 
 //Send in a date from the sql database so that we can do the comparison to see if any KPI's date matches your search.
-function SearchKPIByDate(date) {
+window.SearchKPIByDate = function SearchKPIByDate(date) {
   var returnArr = new Array();
-  var locStorage = new Storage();
+  var locStorage = new KPILocalStorage();
 
   var counter = 0;
   for(var i = 0, l = locStorage.size(); i < l; i++) {
