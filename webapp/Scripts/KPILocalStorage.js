@@ -7,7 +7,7 @@ window.LoadJSON = function LoadJSON() {
   var store = new KPILocalStorage();
 
   $.each(data, function(i, kpi) {
-    store.set(kpi.record_number, kpi);
+    store.set(i, kpi);
   });
   /*$.getJSON("KPI_Handler.ashx", function(item) {
     $.each(item, function(i, kpi) {
@@ -50,8 +50,8 @@ window.SearchKPIByDate = function SearchKPIByDate(date) {
       if (FormatDate(value.KPI_Date).getFullYear() == date.getFullYear()) {
         var dataPoint = new Array(2);
         dataPoint[0] = value.KPI_Name;
-        //dataPoint[1] = addCommas(value.KPI_Value);
         dataPoint[1] = value.KPI_Value;
+
         returnArr.push(dataPoint);
       }
     }
