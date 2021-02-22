@@ -4,7 +4,7 @@ var orient = "";
 window.currentWidth =currentWidth;
 window.orient=orient;
 
-window.updateLayout = var updateLayout = function() {
+window.updateLayout = function updateLayout() {
   if (window.innerWidth !== currentWidth) {
     currentWidth = window.innerWidth;
 
