@@ -90,7 +90,7 @@ window.GetKPI = function GetKPI(date, kpiName) {
   var kpiData = "";
 
   for(var i = 0; i < kpiArray.length; i++) {
-    if (kpiArray[i][0] == kpiName.replaceAll('_',' ')) {
+    if (kpiArray[i][0].toLowerCase() == kpiName.replaceAll('_',' ').toLowerCase()) {
       kpiData = kpiArray[i][1];
       break;
     }
