@@ -90,11 +90,12 @@ window.GetKPI = function GetKPI(date, kpiName) {
   var kpiData = "";
 
   for(var i = 0; i < kpiArray.length; i++) {
-    if (kpiArray[i][0] == kpiName) {
+    if (kpiArray[i][0] == kpiName.replaceAll('_',' ')) {
       kpiData = kpiArray[i][1];
       break;
     }
   }
+
   return kpiData;
 }
 
