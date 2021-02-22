@@ -516,7 +516,7 @@ window.DrawStripes = function DrawStripes(c, x, y, w, h, d) {
 // Name: DrawPie
 // Author: Louis Bodnar
 window.DrawPie = function DrawPie(c, x, y, w, h, d) {
-  d = d.replace('%','');
+  d = Number(d.replace('%',''))/100;
   //clearCanvas(c);
   // data format
   //

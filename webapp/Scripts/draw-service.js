@@ -1,3 +1,7 @@
+import avgDollar from '../images/Avg$.png'
+import handoff from '../images/handoff.png'
+import dollar from '../images/dollar.png'
+
 //Notice from Lok
 //array that stores the name of element, x, y, width, height and data through the year
 //for every element we draw, make sure you pass the above information into the array
@@ -36,11 +40,11 @@ window.DrawService = function DrawService(c, date) {
         context.drawImage(img2, 750, 1115);
         DrawService2(c, date);
       }
-      img2.src = 'images/Avg$.png';
+      img2.src = avgDollar;
     }
-    img1.src = 'images/handoff.png';
+    img1.src = handoff;
   }
-  img.src = 'images/dollar.png';
+  img.src = dollar;
 }
 
 window.DrawService2 = function DrawService2(c, date) {
@@ -83,7 +87,7 @@ window.DrawService2 = function DrawService2(c, date) {
   DrawPerson("myCanvas", 40, 400, 110);
   DrawPerson("myCanvas", 540, 400, 110);
 
-  DrawEffectiveness("myCanvas", 90, 890, date, kpiDealer, kpiBrand);
+  DrawEffectiveness("myCanvas", 90, 890, date, Number(kpiDealer.replace('%',''))/100, Number(kpiBrand.replace('%',''))/100);
 
 // TEXT SECTION
 

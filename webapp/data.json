@@ -36,7 +36,7 @@
     "May-12": "58.7%"
   },
   {
-    "KPI Name": "Lapor Ops per RO",
+    "KPI Name": "Labor Ops per RO",
     "Description": "The average number of Labor Operations peformed within each RO",
     "Jan-12": 3.4,
     "Feb-12": 2.1,
@@ -108,7 +108,7 @@
     "May-12": 1841
   },
   {
-    "KPI Name": "Average $ per RO",
+    "KPI Name": "Average money per RO",
     "Description": "Average $ per RO shows your Average CP dollar value spent on each of your ROs for a rolling 12 months, ending on the current month",
     "Jan-12": "$ 141.38",
     "Feb-12": "$ 139.72",

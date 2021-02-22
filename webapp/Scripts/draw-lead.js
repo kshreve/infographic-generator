@@ -1,3 +1,9 @@
+import leadBack from '../images/lead_back.png;'
+import leadStone from '../images/lead_stone.jpg'
+import leadSep from '../images/lead_sep.png'
+import leadBackground2 from '../images/lead_background2.jpg'
+import leadBackground3 from '../images/lead_background3.jpg'
+
 //Notice from Lok
 //array that stores the name of element, x, y, width, height and data through the year
 //for every element we draw, make sure you pass the above information into the array
@@ -11,17 +17,15 @@ window.DrawLead = function DrawLead(c, date) {
   var context = canvas.getContext("2d");
   context.save();
   var background = new Image();
-
   background.onload = function() {
     context.drawImage(background, 0, 0);
     DrawLead2(c, date);
   }
-  background.src = 'images/lead_back.png';
+  background.src = leadBack;
   context.restore();
 }
 
-function DrawLead2(c, date) {
-
+window.DrawLead2 = function DrawLead2(c, date) {
 //draw the first section background
   var canvas = document.getElementById(c);
   var context = canvas.getContext("2d");
@@ -32,11 +36,11 @@ function DrawLead2(c, date) {
     context.drawImage(stone, 29, 500, 745, 500);
     DrawLead3(c, date);
   }
-  stone.src = 'images/lead_stone.jpg';
+  stone.src = leadStone;
   context.restore();
 }
 
-function DrawLead3(c, date) {
+window.DrawLead3 = function DrawLead3(c, date) {
 
 //draw the separator
   var canvas = document.getElementById(c);
@@ -48,11 +52,11 @@ function DrawLead3(c, date) {
     context.drawImage(sep, 0, 150);
     DrawLead4(c, date);
   }
-  sep.src = 'images/lead_sep.png';
+  sep.src = leadSep;
   context.restore();
 }
 
-function DrawLead4(c, date) {
+window.DrawLead4 = function DrawLead4(c, date) {
 //Draw another separator
   var canvas = document.getElementById(c);
   var context = canvas.getContext("2d");
@@ -63,11 +67,11 @@ function DrawLead4(c, date) {
     context.drawImage(sep2, 0, 620);
     DrawLead5(c, date);
   }
-  sep2.src = 'images/lead_sep.png';
+  sep2.src = leadSep;
   context.restore();
 }
 
-function DrawLead5(c, date) {
+window.DrawLead5 = function DrawLead5(c, date) {
 //Draw the second and third section background
   var canvas = document.getElementById(c);
   var context = canvas.getContext("2d");
@@ -82,12 +86,12 @@ function DrawLead5(c, date) {
     context.drawImage(back3, 29, 1475, 745, 281)
     DrawLead6(c, date);
   }
-  back2.src = 'images/lead_background2.jpg';
-  back3.src = 'images/lead_background3.jpg';
+  back2.src = leadBackground2;
+  back3.src = leadBackground3;
   context.restore();
 }
 
-function DrawLead6(c, date) {
+window.DrawLead6 = function DrawLead6(c, date) {
   var canvas = document.getElementById(c);
   var context = canvas.getContext("2d");
   context.save();
@@ -211,7 +215,7 @@ function DrawLead6(c, date) {
 
 // Author:      Peter Chen
 // Purpose:		Positioning the elevator image
-var checkEle = function() {
+window.checkEle  = function checkEle() {
   var p = $('#ele');
   var header = $('#header');
   var offset = p.offset();
