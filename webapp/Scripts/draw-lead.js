@@ -1,4 +1,4 @@
-import leadBack from '../images/lead_back.png;'
+import leadBack from '../images/lead_back.png'
 import leadStone from '../images/lead_stone.jpg'
 import leadSep from '../images/lead_sep.png'
 import leadBackground2 from '../images/lead_background2.jpg'
