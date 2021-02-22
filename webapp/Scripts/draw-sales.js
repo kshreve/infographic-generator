@@ -236,12 +236,12 @@ window.DrawCanvasPart3 = function DrawCanvasPart3(c, date) {
   //DrawX(c, 100,1800);
   DrawPie(c, 750, 1050, 100, 100, GetKPI(date, "Visits_Per_Customer"));
   var kpiData = new Array();
-  kpiData.push([GetKPI(date, "Competitive_Segment_Sale_Anytown_Automotive"), "Anytown Automotive"]);
-  kpiData.push([GetKPI(date, "Competitive_Segment_Sale_Jeff_Williams_Toyotas"), "Jeff Williams Toyota"]);
-  kpiData.push([GetKPI(date, "Competitive_Segment_Sale_Uptown_Honda"), "Uptown Honda"]);
-  kpiData.push([GetKPI(date, "Competitive_Segment_Sale_Fred_Rodgers_Mazda"), "Fred Rodgers Mazda"]);
-  kpiData.push([GetKPI(date, "Competitive_Segment_Sale_Garrett_Ford"), "Garrett Ford"]);
-  kpiData.push([GetKPI(date, "Competitive_Segment_Sale_Peter_Lake_Ford"), "Peter Lake Ford"]);
+  kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Anytown_Automotive"), "Anytown Automotive"]);
+  kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Jeff_Williams_Toyotas"), "Jeff Williams Toyota"]);
+  kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Uptown_Honda"), "Uptown Honda"]);
+  kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Fred_Rodgers_Mazda"), "Fred Rodgers Mazda"]);
+  kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Garrett_Ford"), "Garrett Ford"]);
+  kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Peter_Lake_Ford"), "Peter Lake Ford"]);
   DrawCompetitiveSegmentSale(c, 100, 1300, 800, 200, kpiData);
   DrawPlaid(c, 0, 1747, canvas.width, 400, 0);
 
@@ -264,7 +264,7 @@ window.DrawCanvasPart3 = function DrawCanvasPart3(c, date) {
   trendArray.push(['Visits Per Customer', 750, 1050 + offset, 100, 100, GetTrendKPI(date, 'Visits_Per_Customer'), '<p>Visits per Customer shows the percentage of your customers who returned for CP vehicle service at least two or more times in the last 12 months, ending on the current month.</p>']);
   trendArray.push(['Lost Profit', 100, 1850 + offset, 200, 200, GetTrendKPI(date, 'Lost_Profit'), '<p>Lost Profit = the Lost Sales in the MyPMA times the national average Gross Profit per Vehicle plus the Lost Sales times the Lifetime Service Value. </p>']);
   trendArray.push(['Lost Sales', 600, 1850 + offset, 200, 200, GetTrendKPI(date, 'Lost_Sales'), '<p>Within a Census Tract, the Lost Sales = Sales Below Expected at the Benchmark + Insell. At the MyPMA level: Lost Sales = Gross Lost Sales + Insell. </p>']);
-  trendArray.push(['Competitive Segment Sale', 100, 1300 + offset, 800, 200, [[GetTrendKPI(date, 'Competitive_Segment_Sale_Anytown_Automotive'), "#FF9B00", "Anytown Automotive"], [GetTrendKPI(date, 'Competitive_Segment_Sale_Jeff_Williams_Toyotas'), "#F54C08", "Jeff Williams Toyotas"], [GetTrendKPI(date, 'Competitive_Segment_Sale_Uptown_Honda'), "#B4213F", "Uptown Honda"], [GetTrendKPI(date, 'Competitive_Segment_Sale_Fred_Rodgers_Mazda'), "#69039D", "Fred Rodgers Mazda"], [GetTrendKPI(date, 'Competitive_Segment_Sale_Garrett_Ford'), "#283577", "Garrett Ford"], [GetTrendKPI(date, 'Competitive_Segment_Sale_Peter_Lake_Ford'), "#66A5C7", "Peter Lake Ford"]], '<p>The amount of money spent by purchasing leads for each vehicle sold</p>']);
+  trendArray.push(['Competitive Segment Sale', 100, 1300 + offset, 800, 200, [[GetTrendKPI(date, 'Competitive_Segment_Sales_Anytown_Automotive'), "#FF9B00", "Anytown Automotive"], [GetTrendKPI(date, 'Competitive_Segment_Sales_Jeff_Williams_Toyotas'), "#F54C08", "Jeff Williams Toyotas"], [GetTrendKPI(date, 'Competitive_Segment_Sales_Uptown_Honda'), "#B4213F", "Uptown Honda"], [GetTrendKPI(date, 'Competitive_Segment_Sales_Fred_Rodgers_Mazda'), "#69039D", "Fred Rodgers Mazda"], [GetTrendKPI(date, 'Competitive_Segment_Sales_Garrett_Ford'), "#283577", "Garrett Ford"], [GetTrendKPI(date, 'Competitive_Segment_Sales_Peter_Lake_Ford'), "#66A5C7", "Peter Lake Ford"]], '<p>The amount of money spent by purchasing leads for each vehicle sold</p>']);
 
 }
 
