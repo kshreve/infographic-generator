@@ -81,7 +81,6 @@ window.DrawCanvasPart2 = function DrawCanvasPart2(c, date) {
   context.restore();
   // draw some elements on top of the circles
   Used_Vehicle_Sale(c, canvas.width / 4 - 75, 135, 150, 130, [date, GetKPI(date, "Used_Vehicle_Sales")]);
-  debugger;
   Retail_Sale(c, canvas.width / 4 - 75, 415, 77, 76, [date, GetKPI(date, "Retail_Sales")]);
   Cost_Per_Sale(c, canvas.width / 2 + 290 - 88, 130, 122, 80, [date, GetKPI(date, "Cost_Per_Sale")]);
   Pump_In_Sale(c, canvas.width / 4 + 212, 330, canvas.width - (canvas.width / 4 + 212), 370, [[GetKPI(date, "Pump_In_Sales_Anytown_Automotive"), "Anytown Automotive", "#FF9B00"], [GetKPI(date, "Pump_In_Sale_Allan_Automart"), "Allan Automart", "#F54C08"], [GetKPI(date, "Pump_In_Sale_Jefferson_Automotive"), "Jefferson Automotive", "#B4213F"], [GetKPI(date, "Pump_In_Sale_Nestor_Auto_Center"), "Nestor Auto Center", "#69039D"], [GetKPI(date, "Pump_In_Sale_Diamond_Automotive"), "Diamond Automotive", "#283577"], [GetKPI(date, "Pump_In_Sale_Anthony_Motors"), "Anthony Motors", "#66A5C7"]]);
