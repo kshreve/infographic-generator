@@ -2,6 +2,10 @@ var monthname = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"
 var fullMonthName = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 var currDate;
 
+window.monthname = monthname;
+window.fullMonthName = fullMonthName;
+window.currDate = currDate;
+
 window.initDate = function initDate() {
   if (!currDate) {
     //Note: Freeze in time.

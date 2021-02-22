@@ -1,46 +1,48 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-		<title>Infographics Generator - Sales</title>
+        <title>Infographics Generator - Sales</title>
 
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet"
+              href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="Styles/drill_down.css" />
-		<link rel="stylesheet" type="text/css" href="Styles/header.css" />
-		<script type="text/javascript" src="Scripts/HandleDate.js"></script>
-		<script type="text/javascript" src="Scripts/KPILocalStorage.js"></script>
-		<script type="text/javascript" src="Scripts/elements.js"></script>
+        <link rel="stylesheet" type="text/css" href="Styles/drill_down.css" />
+        <link rel="stylesheet" type="text/css" href="Styles/header.css" />
+        <script type="text/javascript" src="Scripts/HandleDate.js"></script>
+        <script type="text/javascript" src="Scripts/KPILocalStorage.js"></script>
+        <script type="text/javascript" src="Scripts/elements.js"></script>
         <script>
-            window.onload = function(){
-                LoadJSON();
-				DrawSalesInfographic("myCanvas",initDate());
-            }
+          window.onload = function() {
+            LoadJSON();
+            DrawSalesInfographic("myCanvas", initDate());
+          }
         </script>
     </head>
     <body>
-		<div id="main">
-			<div id="header">
-				<img src="images/header.jpg">
-				<a href="javascript:navigator_Go('Index.html');" id="hButton"><img src="images/homeButton2.png"></a>
-				<p id="category">Sales</p>
-				<p id="month"></p>
-				<p id="month2"></p>
-			</div>
-			<canvas id="myCanvas" width="1000" height="2200">
-				<!-- Insert fallback content here -->
-				Sorry, your browser doesn't support canvas technology
-			</canvas>
-			<div id="dialog-overlay"></div>
-			<div id="dialog-box">
-				<div class="dialog-content">
-					<div id="dialog-message"></div>
-					<a href="#" class="button">Close</a>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript" src="Scripts/drill-down-display.js"></script>
-		<script type="text/javascript" src="Scripts/draw-sales.js"></script>
+        <div id="main">
+            <div id="header">
+                <img src="images/header.jpg">
+                <a href="javascript:navigator_Go('Index.html');" id="hButton"><img
+                        src="images/homeButton2.png"></a>
+                <p id="category">Sales</p>
+                <p id="month"></p>
+                <p id="month2"></p>
+            </div>
+            <canvas id="myCanvas" width="1000" height="2200">
+                <!-- Insert fallback content here -->
+                Sorry, your browser doesn't support canvas technology
+            </canvas>
+            <div id="dialog-overlay"></div>
+            <div id="dialog-box">
+                <div class="dialog-content">
+                    <div id="dialog-message"></div>
+                    <a href="#" class="button">Close</a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="Scripts/drill-down-display.js"></script>
+        <script type="text/javascript" src="Scripts/draw-sales.js"></script>
     </body>
 </html>

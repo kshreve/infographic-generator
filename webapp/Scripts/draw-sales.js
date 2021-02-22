@@ -1,3 +1,6 @@
+import splitterImage from '../images/splitter.png';
+import pointingDude from '../images/PointingDude.png';
+
 //Notice from Lok
 //array that stores the name of element, x, y, width, height and data through the year
 //for every element we draw, make sure you pass the above information into the array
@@ -35,10 +38,10 @@ window.DrawSalesInfographic = function DrawSalesInfographic(c, date) {
     context.drawImage(imgSplitter, 0, 1547, canvas.width, 200); // below the grey area
     DrawCanvasPart2(c, date);  // drawing the entire canvas must be broken up in to multiple functions when loading an image to avoid race condition of background drawing over foreground
   }
-  imgSplitter.src = "images/splitter.png";
+  imgSplitter.src = splitterImage;
 };
 
-function DrawCanvasPart2(c, date) {
+window.DrawCanvasPart2 = function DrawCanvasPart2(c, date) {
   var canvas = document.getElementById(c);
   var context = canvas.getContext("2d");
   // draw circles
@@ -78,6 +81,7 @@ function DrawCanvasPart2(c, date) {
   context.restore();
   // draw some elements on top of the circles
   Used_Vehicle_Sale(c, canvas.width / 4 - 75, 135, 150, 130, [date, GetKPI(date, "Used_Vehicle_Sales")]);
+  debugger;
   Retail_Sale(c, canvas.width / 4 - 75, 415, 77, 76, [date, GetKPI(date, "Retail_Sales")]);
   Cost_Per_Sale(c, canvas.width / 2 + 290 - 88, 130, 122, 80, [date, GetKPI(date, "Cost_Per_Sale")]);
   Pump_In_Sale(c, canvas.width / 4 + 212, 330, canvas.width - (canvas.width / 4 + 212), 370, [[GetKPI(date, "Pump_In_Sales_Anytown_Automotive"), "Anytown Automotive", "#FF9B00"], [GetKPI(date, "Pump_In_Sale_Allan_Automart"), "Allan Automart", "#F54C08"], [GetKPI(date, "Pump_In_Sale_Jefferson_Automotive"), "Jefferson Automotive", "#B4213F"], [GetKPI(date, "Pump_In_Sale_Nestor_Auto_Center"), "Nestor Auto Center", "#69039D"], [GetKPI(date, "Pump_In_Sale_Diamond_Automotive"), "Diamond Automotive", "#283577"], [GetKPI(date, "Pump_In_Sale_Anthony_Motors"), "Anthony Motors", "#66A5C7"]]);
@@ -112,11 +116,11 @@ function DrawCanvasPart2(c, date) {
     context.drawImage(imageObj, canvas.width / 4 - 111, 648);
     DrawCanvasPart3(c, date);
   };
-  imageObj.src = "images/PointingDude.png";
+  imageObj.src = pointingDude;
 
 }
 
-function DrawCanvasPart3(c, date) {
+window.DrawCanvasPart3 = function DrawCanvasPart3(c, date) {
   var canvas = document.getElementById(c);
   var context = canvas.getContext("2d");
 

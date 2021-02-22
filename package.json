@@ -2,6 +2,7 @@
   "name": "webapp",
   "version": "1.0.0",
   "dependencies": {
+    "images": "^3.2.3",
     "parcel-bundler": "1.12.4"
   },
   "scripts": {
