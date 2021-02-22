@@ -1503,6 +1503,7 @@ window.DrawCircle = function DrawCircle(c, x, y, r, color) {
 // Data format: value
 // Example:     DrawCloseRate("myCanvas", 0, 0, 1000);
 window.DrawCloseRate = function DrawCloseRate(c, x, y, d) {
+  d = Number(d.replace('%',''))/100;
   var canvas = document.getElementById(c);
   var context = canvas.getContext("2d");
   var lineWidth = 10;
@@ -1869,8 +1870,8 @@ window.Draw3PL = function Draw3PL(c, x, y, w, h, myArray) {
   gradient.addColorStop(1, '#000000');
 
   max = max - border;
-  txtArea = w * 0.2;
-  full = w - (border * 2) - txtArea;
+  var txtArea = w * 0.2;
+  var full = w - (border * 2) - txtArea;
   cxt.strokeStyle = '#FFFFFF';
   cxt.save();
 
@@ -1879,7 +1880,7 @@ window.Draw3PL = function Draw3PL(c, x, y, w, h, myArray) {
   cxt.shadowBlur = border / 2;
   cxt.shadowColor = "black";
   cxt.fillStyle = c1;
-  n = 0;
+  var n = 0;
   for(key in myArray) {
     cxt.fillRect(border + txtArea + x, (border * 2) + (bar_h * n) + y, (myArray[key] / max) * full, bar_h - border);
     n++;
