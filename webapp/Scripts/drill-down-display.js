@@ -2,7 +2,7 @@
 // Author:      Lok Cheung
 // Purpose:     Uses quadratic curves to draw a colorful figure with labeled sections.  Each section's height is relative to its weighted value.
 // Arguments:   popup(html_message);
-function popup(message) {
+window.popup = function popup(message) {
   // get the screen height and width
   var maskHeight = $(document).height();
   var maskWidth = $(window).width();
@@ -25,7 +25,7 @@ function popup(message) {
 // Arguments:   drawTrend(data, heightFactor);
 // Data format: [[month, value], ... ]
 // Example:     drawTrend(data, heightFactor);
-function drawTrend(data, heightFactor) {
+window.drawTrend = function drawTrend(data, heightFactor) {
   var canvas = document.getElementById("trendGraph");
   var context = canvas.getContext("2d");
   var radius = 4;
@@ -61,7 +61,7 @@ function drawTrend(data, heightFactor) {
 // Purpose:     To draw the drill down display trend graph for elements with multiple data
 // Arguments:   drawTrendMul(canvas_id, KPI_name, data, color, index, heightFactor, withNum);
 // Data format: [[month, value], ... ]
-function drawTrendMul(c, name, d, color, index, heightFactor, withNum) {
+window.drawTrendMul = function drawTrendMul(c, name, d, color, index, heightFactor, withNum) {
   var canvas = document.getElementById(c);
   var context = canvas.getContext("2d");
   context.save();

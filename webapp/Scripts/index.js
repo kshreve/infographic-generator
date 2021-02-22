@@ -1,6 +1,10 @@
 var currentWidth;
 var orient = "";
-var updateLayout = function() {
+
+window.currentWidth =currentWidth;
+window.orient=orient;
+
+window.updateLayout = var updateLayout = function() {
   if (window.innerWidth !== currentWidth) {
     currentWidth = window.innerWidth;
 

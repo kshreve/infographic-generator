@@ -16,7 +16,7 @@ window.initDate = function initDate() {
   return currDate;
 }
 
-function GetFullMonth(todate, b) {
+window.GetFullMonth = function GetFullMonth(todate, b) {
   document.getElementById('month').innerHTML = fullMonthName[todate.getMonth()] + " '" + todate.getFullYear()
     .toString()
     .substr(2, 3);
@@ -27,7 +27,7 @@ function GetFullMonth(todate, b) {
   }
 }
 
-function wiggle() {
+window.wiggle = function wiggle() {
   $("#month").animate({ "left": "-=10px" }, 100);
   $("#month").animate({ "left": "+=20px" }, 100);
   $("#month").animate({ "left": "-=20px" }, 100);
@@ -94,7 +94,7 @@ window.insideDateRange = function insideDateRange(month) {
 }
 
 ////Finding the total range that our data spans.
-function dateRange() {
+window.dateRange = function dateRange() {
   var locStorage = new KPILocalStorage();
   var FirstMonth = 13, FirstYear = 3099, LastMonth = 0, LastYear = 0;
 

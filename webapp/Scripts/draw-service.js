@@ -43,7 +43,7 @@ window.DrawService = function DrawService(c, date) {
   img.src = 'images/dollar.png';
 }
 
-function DrawService2(c, date) {
+window.DrawService2 = function DrawService2(c, date) {
   var canvas = document.getElementById(c);
   var context = canvas.getContext("2d");
 

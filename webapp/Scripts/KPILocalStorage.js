@@ -103,7 +103,7 @@ window.GetKPI = function GetKPI(date, kpiName) {
 // Author: Kevin Shreve, Lok Cheung
 // Description: Get data of a KPI over months
 // Remarks: this function does not deal with data for over a year
-window.GetTrendKPI = function F(date, kpiName) {
+window.GetTrendKPI = function GetTrendKPI(date, kpiName) {
   var kpiArray = new Array();
   var kpi;
   var month;
