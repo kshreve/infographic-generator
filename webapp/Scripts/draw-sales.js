@@ -237,7 +237,7 @@ window.DrawCanvasPart3 = function DrawCanvasPart3(c, date) {
   DrawPie(c, 750, 1050, 100, 100, GetKPI(date, "Visits_Per_Customer"));
   var kpiData = new Array();
   kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Anytown_Automotive"), "Anytown Automotive"]);
-  kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Jeff_Williams_Toyotas"), "Jeff Williams Toyota"]);
+  kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Jeff_Williams_Toyota"), "Jeff Williams Toyota"]);
   kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Uptown_Honda"), "Uptown Honda"]);
   kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Fred_Rodgers_Mazda"), "Fred Rodgers Mazda"]);
   kpiData.push([GetKPI(date, "Competitive_Segment_Sales_Garrett_Ford"), "Garrett Ford"]);
